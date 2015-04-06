@@ -13,23 +13,23 @@
     	<key>DOWNLOAD_URL</key>
     	<string>http://www.last.fm/download/mac</string>
     </dict>
-		<key>MinimumVersion</key>
+	<key>MinimumVersion</key>
     	<string>2.0</string>
     	<key>Process</key>
     	<array>
-    		<dict>
+    	    <dict>
             	<key>Processor</key>
             	<string>URLDownloader</string>
             	<key>Arguments</key>
             <dict>
             	<key>url</key>
             	<string>%DOWNLOAD_URL%</string>
-            	</dict>
-        	<dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
             </dict>
-        </dict>
+	</dict>
+            <dict>
+            	<key>Processor</key>
+            	<string>EndOfCheckPhase</string>
+            </dict>
     </array>
 </dict>
 </plist>
