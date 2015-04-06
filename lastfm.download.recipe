@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
     	<key>NAME</key>
-    	<string>LastFM</key>
+    	<string>LastFM</string>
     	<key>DOWNLOAD_URL</key>
     	<string>http://www.last.fm/download/mac</string>
     </dict>
