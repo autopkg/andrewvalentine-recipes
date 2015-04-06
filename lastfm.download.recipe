@@ -14,7 +14,7 @@
     	<string>http://www.last.fm/download/mac</string>
     </dict>
 	<key>MinimumVersion</key>
-    	<string>2.0</string>
+    	<string>0.4.2</string>
     	<key>Process</key>
     	<array>
     	    <dict>
