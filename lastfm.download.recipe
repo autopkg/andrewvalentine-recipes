@@ -11,7 +11,7 @@
     	<key>NAME</key>
     	<string>LastFM</string>
     	<key>DOWNLOAD_URL</key>
-    	<string>http://www.last.fm/download/mac</string>
+    	<string>http://cdn.last.fm/client/Mac/Last.fm-2.1.36.zip</string>
     </dict>
 	<key>MinimumVersion</key>
     	<string>0.4.2</string>
