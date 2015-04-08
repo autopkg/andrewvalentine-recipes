@@ -18,6 +18,11 @@
 		<dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>/Applications/</key>
+			</dict>
 		</dict>
 	</array>
 </dict>
