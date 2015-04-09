@@ -46,7 +46,7 @@
 			<key>dmg_root</key>
 			<string>%RECIPE_CACHE_DIR/NAME%</string>
 			<key>dmg_path</key>
-			<string>%RECIPE_CACHE_DIR/LastFM.dmg%</string>
+			<string>LastFM.dmg</string>
 			</dict>
 		</dict>
 		<dict>
