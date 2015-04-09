@@ -40,7 +40,7 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>Copier</key>
+			<string>Copier</string>
 			<dict>
 			<key>destination_path</key>
 			<string>/tmp/%NAME%</string>
