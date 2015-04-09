@@ -40,20 +40,18 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>DmgCreator</string>
-			<key>Arguments</key>
+			<string>Copier</key>
 			<dict>
-			<key>dmg_root</key>
+			<key>destination_path</key>
+			<string>/tmp/%NAME%</string>
+			<key>source_path</key>
 			<string>%RECIPE_CACHE_DIR/NAME%</string>
-			<key>dmg_path</key>
-			<string>%RECIPE_CACHE_DIR/NAME%.dmg</string>
 			</dict>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>/tmp/%NAME%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
