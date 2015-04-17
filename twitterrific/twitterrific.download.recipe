@@ -27,7 +27,7 @@
 				<key>cask_name</key>
 				<string>twitterrific</string>
 				<key>url</key>
-				<string>https://iconfactory.com/assets/software/twitterrific/Twitterrific-#{version}.zip</string>
+				<string>http://twitterrific.com/mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
