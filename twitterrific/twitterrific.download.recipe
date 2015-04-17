@@ -24,8 +24,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>cask_name</key>
-				<string>twitterrific</string>
 				<key>url</key>
 				<string>https://github.com/caskroom/homebrew-cask/blob/master/Casks/twitterrific.rb</string>
 			</dict>
