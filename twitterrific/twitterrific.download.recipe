@@ -12,6 +12,8 @@
 		<string>Twitterrific</string>
 		<key>cask_name</key>
 		<string>twitterrific</string>
+		<key>url</key>
+		<string>https://github.com/caskroom/homebrew-cask/blob/master/Casks/twitterrific.rb</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -26,8 +28,6 @@
 			<dict>
 				<key>cask_name</key>
 				<string>twitterrific</string>
-				<key>url</key>
-				<string>http://twitterrific.com/mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
