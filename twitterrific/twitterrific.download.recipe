@@ -21,15 +21,6 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>BrewCaskInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>cask_name</key>
-				<string>twitterrific</string>
-			</dict>
-			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
