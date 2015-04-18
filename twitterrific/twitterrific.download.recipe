@@ -21,7 +21,7 @@
 				<key>cask_name</key>
 				<string>twitterrific</string>
 				<key>url</key>
-				<string>https://iconfactory.com/assets/software/twitterrific/Twitterrific-#{version}.zip</string>
+				<string>https://iconfactory.com/assets/software/twitterrific/Twitterrific-4.5.1.zip</string>
 				<key>version</key>
 				<string>4.5.1</string>
 			</dict>
