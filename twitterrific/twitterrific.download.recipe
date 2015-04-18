@@ -10,8 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Twitterrific</string>
-		<key>cask_name</key>
-		<string>twitterrific</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
