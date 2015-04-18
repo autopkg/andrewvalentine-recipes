@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Twitterrific</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps</string>
+		<string>apps/twitteriffic</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -27,6 +27,7 @@
 				<true/>
 			</array>
 		</dict>
+	</dict>
 		<key>MinimumVersion</key>
 		<string>0.4.0</string>
 		<key>ParentRecipe</key>
@@ -37,7 +38,6 @@
 				<key>Processor</key>
 				<string>Unarchiver</string>
 			</dict>
-			<dict>
 				<key>Processor</key>
 				<string>DmgCreator</string>
 				<key>Arguments</key>
@@ -47,8 +47,7 @@
 					<key>dmg_path</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				</dict>
-			</dict>
-			<dict>
+				<dict>
 				<key>Arguments</key>
 				<dict>
 					<key>pkg_path</key>
@@ -60,6 +59,5 @@
 				<string>MunkiImporter</string>
 			</dict>
 		</array>
-</dict>
 </dict>
 </plist>
