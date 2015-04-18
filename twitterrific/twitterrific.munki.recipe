@@ -17,6 +17,7 @@
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
+			</array>
 				<key>description</key>
 				<string>Twitterrific is the friendly, award-winning Twitter client that's beautiful to look at, easy to use and full of elegant features.</string>
 				<key>display_name</key>
@@ -25,7 +26,6 @@
 				<string>%NAME%</string>
 				<key>unattended_install</key>
 				<true/>
-			</array>
 		</dict>
 	</dict>
 		<key>MinimumVersion</key>
@@ -48,15 +48,15 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				</dict>
 				<dict>
-					<key>Processor</key>
-					<string>MunkiImporter</string>
-						<key>Arguments</key>
-							<dict>
-								<key>pkg_path</key>
-								<string>%dmg_path%</string>
-								<key>repo_subdirectory</key>
-								<string>%MUNKI_REPO_SUBDIR%</string>
-							</dict>
+					<key>Arguments</key>
+						<dict>
+							<key>pkg_path</key>
+							<string>%dmg_path%</string>
+							<key>repo_subdirectory</key>
+							<string>%MUNKI_REPO_SUBDIR%</string>
+						</dict>
+						<key>Processor</key>
+						<string>MunkiImporter</string>
 				</dict>
 		</array>
 </dict>
