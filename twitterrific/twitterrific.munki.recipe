@@ -18,6 +18,8 @@
 			<array>
 				<string>testing</string>
 			</array>
+				<key>category</key>
+				<string>Social</string>
 				<key>description</key>
 				<string>Twitterrific is the friendly, award-winning Twitter client that's beautiful to look at, easy to use and full of elegant features.</string>
 				<key>display_name</key>
