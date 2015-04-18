@@ -10,7 +10,7 @@
 	<dict>
 		<key>NAME</key>
 		<string>Twitterrific</string>
-		<key>INSTALL_DIR</key>
+		<key>DESTINATION_PATH</key>
 		<string>/Applications/</string>
 	</dict>
 	<key>MinimumVersion</key>
@@ -25,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destinaton_path</key>
-				<string>%INSTALL_DIR%</string>
+				<string>%DESTINATION_PATH%</string>
 			</dict>
 		</dict>
 	</array>
