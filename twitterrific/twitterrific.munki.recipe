@@ -48,16 +48,16 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				</dict>
 				<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>pkg_path</key>
-					<string>%dmg_path%</string>
-					<key>repo_subdirectory</key>
-					<string>%MUNKI_REPO_SUBDIR%</string>
+					<key>Processor</key>
+					<string>MunkiImporter</string>
+						<key>Arguments</key>
+							<dict>
+								<key>pkg_path</key>
+								<string>%dmg_path%</string>
+								<key>repo_subdirectory</key>
+								<string>%MUNKI_REPO_SUBDIR%</string>
+							</dict>
 				</dict>
-				<key>Processor</key>
-				<string>MunkiImporter</string>
-			</dict>
 		</array>
 </dict>
 </plist>
