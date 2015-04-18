@@ -10,9 +10,7 @@
 	<dict>
 		<key>NAME</key>
 		<string>Twitterrific</string>
-		<key>DESTINATION_PATH</key>
-		<string>/Applications/</string>
-	</dict>
+		</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
@@ -25,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destinaton_path</key>
-				<string>%DESTINATION_PATH%</string>
+				<string>/Applications/</string>
 			</dict>
 		</dict>
 	</array>
