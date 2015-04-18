@@ -53,6 +53,7 @@
 					<key>dmg_path</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				</dict>
+			</dict>
 				<dict>
 					<key>Arguments</key>
 						<dict>
@@ -64,7 +65,7 @@
 						<key>Processor</key>
 						<string>MunkiImporter</string>
 					</dict>
-				</dict>
-			</array>
-		</dict>
-	</plist>
+				</array>
+			</dict>
+		</plist>
+					
