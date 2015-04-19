@@ -24,11 +24,11 @@
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
 			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-	</dict>
 	</array>
 </dict>
 </plist>
