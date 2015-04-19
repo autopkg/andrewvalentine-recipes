@@ -19,13 +19,16 @@
 		<dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
-			<key>url</key>
-			<string>%DOWNLOAD_URL%</string>
-		</dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
+	</dict>
 	</array>
 </dict>
 </plist>
