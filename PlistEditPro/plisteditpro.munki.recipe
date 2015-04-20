@@ -21,6 +21,8 @@
 			<string>Development</string>
 			<key>description</key>
 			<string>PlistEdit Pro is the most advanced property list and JSON editor written for OS X.</string>
+			<key>developer</key>
+			<string>Fat Cat Software</string>
 			<key>display_name</key>
 			<string>PlistEditPro</string>
 			<key>name</key>
