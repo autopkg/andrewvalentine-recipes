@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+	<string>Downloads the latest version of Tuxera-NTFS from Brew Cask</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.download.tuxera</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Tuxera-NTFS</string>
+		<key>CASK_NAME</key>
+		<string>tuxera-ntfs</string>
+		<key>FILE_NAME</key>
+		<string>%NAME%.dmg</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>BrewCaskInfoProvider</string>
+			<key>Arguments</key>
+			<dict>
+				<key>cask_name</key>
+				<string>%CASK_NAME%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+			<key>filename</key>
+			<string>%FILE_NAME%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
+
