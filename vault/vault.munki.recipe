@@ -44,17 +44,25 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>DmgCreator</string>
+			<string>PkgCreator</string>
 			<key>Arguments</key>
 					<dict>
-						<key>dmg_root</key>
-						<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-						<key>dmg_path</key>
-						<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+						<key>pkg_request</key>
+						<dict>
+							<key>pkgroot</key>
+							<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+							<key>pkgdir</key>
+							<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+							<key>pkgname</key>
+							<string>%NAME%</string>
+							<key>pkgtype</key>
+							<string>flat</string>
+							<key>version</key>
+							<string>1.0</string>
+						</dict>
 					</dict>
-				</dict>
-			<dict>
-				<key>Arguments</key>
+					<dict>
+						<key>Arguments</key>
 					<dict>
 						<key>pkg_path</key>
 						<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
@@ -64,6 +72,7 @@
 					<key>Processor</key>
 					<string>MunkiImporter</string>
 				</dict>
+			</dict>
 			</array>
 		</dict>
 	</plist>
