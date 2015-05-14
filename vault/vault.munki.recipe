@@ -22,7 +22,7 @@
 			<string>Server Tools</string>
     		<key>description</key>
     		<string>A tool for managing secrets.</string>
-    		<key>display_name</key>`
+    		<key>display_name</key>
     		<string>Vault</string>
     		<key>name</key>
     		<string>%NAME%</string>
