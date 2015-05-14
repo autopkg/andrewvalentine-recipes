@@ -61,8 +61,8 @@
 							<string>1.0</string>
 						</dict>
 					</dict>
-					<dict>
-						<key>Arguments</key>
+				<dict>
+					<key>Arguments</key>
 					<dict>
 						<key>pkg_path</key>
 						<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
