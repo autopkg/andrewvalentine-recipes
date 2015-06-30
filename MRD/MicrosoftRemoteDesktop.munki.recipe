@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>local.munki.MAS-MRD</string>
+	<string>local.munki.MicrosoftRemoteDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/apple</string>
+		<string>apps/Apple</string>
 		<key>NAME</key>
-		<string>Microsoft Remote Desktop</string>
+		<string>MicrosoftRemoteDesktop</string>
 		<key>PATH</key>
-		<string>/Applications/%NAME%.app</string>
+		<string>/Applications/Microsoft Remote Desktop.app</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -20,12 +20,12 @@
 			</array>
 			<key>display_name</key>
 			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
 			<key>developer</key>
 			<string>Microsoft</string>
 			<key>category</key>
 			<string>Productivity</string>
-			<key>name</key>
-			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
