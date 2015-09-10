@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current version of LastFM from the LastFM website.</string>
+    <string>Downloads the current version of LastFM via Sparkle</string>
     <key>Identifier</key>
     <string>com.github.andrewvalentine.download.lastfm</string>
     <key>Input</key>
     <dict>
     	<key>NAME</key>
     	<string>LastFM</string>
-    	<key>DOWNLOAD_URL</key>
-    	<string>http://cdn.last.fm/client/Mac/Last.fm-2.1.36.zip</string>
+		<key>APPCAST_URL</key>
+		<string>http://cdn.last.fm/client/Mac/updates.xml</string>
     </dict>
 	<key>MinimumVersion</key>
     	<string>0.4.2</string>
@@ -19,13 +19,17 @@
     	<array>
     	    <dict>
             	<key>Processor</key>
-            	<string>URLDownloader</string>
+            	<string>SparkleUpdateInfoProvider</string>
             	<key>Arguments</key>
             <dict>
-            	<key>url</key>
-            	<string>%DOWNLOAD_URL%</string>
-            </dict>
-	</dict>
+            	<key>appcast_url</key>
+            	<string>%APPCAST_URL%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
             <dict>
             	<key>Processor</key>
             	<string>EndOfCheckPhase</string>
