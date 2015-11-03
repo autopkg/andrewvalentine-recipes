@@ -1,2 +1,2 @@
 # autopkg-recipes
-autopkg recipes, the more trivial the better
+my autopkg recipes, the more trivial the better
