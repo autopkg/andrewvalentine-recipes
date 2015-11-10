@@ -1,0 +1,52 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest release version of Panoply from NASA GISS</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.download.panoply</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Panoply</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>http://www.giss.nasa.gov/tools/panoply/download_mac.html</string>
+				<key>request_headers</key>
+                <dict>
+                    <key>User-Agent</key>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.5.17 (KHTML, like Gecko) Version/8.0.5 Safari/600.5.17</string>
+                </dict>
+				<key>re_pattern</key>
+				<string>PanoplyOSX-[\S]+\.dmg</string>
+				<key>result_output_var_name</key>
+				<string>panoply</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>http://www.giss.nasa.gov/tools/panoply/%panoply%</string>
+				<key>filename</key>
+				<string>Panoply-latest.dmg</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

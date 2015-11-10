@@ -1,0 +1,57 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest release version of Panoply from NASA GISS and imports into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.panoply</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Panoply</string>
+		<key>MUNKI_REPO</key>
+		<string>YOUR_REPO_HERE</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Panoply</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Scientific</string>
+			<key>description</key>
+			<string>Panoply netCDF, HDF and GRIB Data Viewer</string>
+			<key>developer</key>
+			<string>Robert B. Schmunk</string>
+			<key>display_name</key>
+			<string>Panoply</string>
+			<key>name</key>
+			<string>Panoply</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.panoply</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/Panoply-latest.dmg</string>
+				<key>MUNKI_REPO</key>
+				<string>%MUNKI_REPO%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
