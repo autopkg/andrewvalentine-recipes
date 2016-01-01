@@ -9,8 +9,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Panoply</string>
-		<key>MUNKI_REPO</key>
-		<string>YOUR_REPO_HERE</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/Panoply</string>
 		<key>pkginfo</key>
