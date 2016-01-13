@@ -20,7 +20,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://www.giss.nasa.gov/tools/panoply/download_mac.html</string>
+				<string>http://www.giss.nasa.gov/tools/panoply/download.html</string>
 				<key>request_headers</key>
                 <dict>
                     <key>User-Agent</key>
