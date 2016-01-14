@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of Ghostlab into Munki</string>
+	<string>Downloads and imports the current release version of Ghostlab into Munki. A license is required from Vanamco for continued use. Such a license can be deployed as update_for via Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.ghostlab</string>
 	<key>Input</key>

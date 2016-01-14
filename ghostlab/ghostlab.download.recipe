@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Ghostlab 2</string>
+	<string>Downloads the current release version of Ghostlab 2.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.ghostlab</string>
 	<key>Input</key>
