@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Twitterrific from brew-cask.</string>
+    <string>Downloads the current release version of Twitterrific.</string>
     <key>Identifier</key>
     <string>com.github.andrewvalentine.download.twitterrific</string>
 	<key>Input</key>
