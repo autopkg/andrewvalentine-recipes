@@ -1,0 +1,55 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads and imports the latest version of PAST into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.andrewvalentine.munki.past</string>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.andrewvalentine.download.past</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Past</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/past</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>category</key>
+            <string>Scientific</string>
+            <key>description</key>
+            <string>PAST is free software for scientific data analysis, with functions for data manipulation, plotting, univariate and multivariate statistics, ecological analysis, time series and spatial analysis, morphometrics and stratigraphy.</string>
+            <key>developer</key>
+            <string>Øyvind Hammer</string>
+            <key>display_name</key>
+            <string>PAST</string>
+            <key>name</key>
+            <string>Past</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>MUNKI_REPO</key>
+                <string>%MUNKI_REPO%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
