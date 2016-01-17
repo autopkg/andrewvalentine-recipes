@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current version of LastFM via Sparkle</string>
+    <string>Downloads the current version of LastFM via Sparkle. Note that Code Signature Verification is not possible on this .app, as it uses Sealed Resources v.1.</string>
     <key>Identifier</key>
     <string>com.github.andrewvalentine.download.lastfm</string>
     <key>Input</key>
