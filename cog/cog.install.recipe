@@ -13,7 +13,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>cog.download.recipe</string>
+    <string>com.github.andrewvalentine.download.cog</string>
     <key>Process</key>
     <array>
         <dict>
