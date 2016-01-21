@@ -2,13 +2,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads and installs the latest version of PAST.</string>
+    <string>Downloads and installs the latest version of Past.</string>
     <key>Identifier</key>
     <string>com.github.andrewvalentine.install.past</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>PAST</string>
+        <string>Past3</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -27,7 +27,7 @@
                 <array>
                     <dict>
                         <key>source_item</key>
-                        <string>Past3.app</string>
+                        <string>%NAME%.app</string>
                         <key>destination_path</key>
                         <string>/Applications/</string>
                     </dict>
