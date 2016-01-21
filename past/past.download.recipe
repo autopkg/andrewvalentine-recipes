@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of PAST.</string>
+    <string>Downloads the latest version of Past.</string>
     <key>Identifier</key>
     <string>com.github.andrewvalentine.download.past</string>
     <key>Input</key>
