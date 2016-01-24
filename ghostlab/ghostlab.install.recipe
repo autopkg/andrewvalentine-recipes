@@ -18,22 +18,15 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>InstallFromDMG</string>
+			<string>Copier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
-				<key>items_to_copy</key>
-				<array>
-					<dict>
-						<key>source_item</key>
-						<string>Ghostlab2.app</string>
-						<key>destination_path</key>
-						<string>/Applications/</string>
-					</dict>
-				</array>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%-%version%/%NAME%.app</string>
+				<key>destination_path</key>
+				<string>/Applications/%NAME%.app</string>
+			</dict>
 		</dict>
-	</dict>
 	</array>
 </dict>
 </plist>
