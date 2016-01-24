@@ -4,7 +4,7 @@
 	<key>Description</key>
 	<string>Downloads and installs the latest release version of BitBar</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.bitbar.install</string>
+	<string>com.github.andrewvalentine.install.bitbar</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
