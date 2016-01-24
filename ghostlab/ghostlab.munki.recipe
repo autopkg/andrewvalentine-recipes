@@ -2,13 +2,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of Ghostlab into Munki. A license is required from Vanamco for continued use. Such a license can be deployed as update_for via Munki.</string>
+	<string>Downloads and imports the current release version of Ghostlab into Munki. A license is required from Vanamco for continued use. Such a license can be deployed as an update_for via Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.ghostlab</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Ghostlab</string>
+		<string>Ghostlab2</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/ghostlab</string>
 		<key>pkginfo</key>
@@ -24,7 +24,7 @@
 			<key>developer</key>
 			<string>Vanamco</string>
 			<key>display_name</key>
-			<string>Ghostlab</string>
+			<string>Ghostlab2</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -38,15 +38,26 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%-%version%/%NAME%.app</string>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
-			<key>Processor</key>
-			<string>MunkiImporter</string>
 		</dict>
 	</array>
 </dict>
