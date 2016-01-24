@@ -51,7 +51,7 @@
 					<key>CFBundleShortVersionString</key>
 					<string>version</string>
 					<key>CFBundleIdentifier</key>
-					<string>versions</string>
+					<string>identifier</string>
 				</dict>
 			</dict>
 		</dict>
@@ -67,7 +67,7 @@
 					<key>pkgname</key>
 					<string>%NAME%</string>
 					<key>id</key>
-					<string>%version%</string>
+					<string>%identifier%</string>
 					<key>version</key>
 					<string>%version%</string>
 					<key>chown</key>
