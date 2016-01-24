@@ -44,14 +44,17 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-			<key>Arguments</key>
+		<key>Processor</key>
+		<string>PlistReader</string>
+		<key>Arguments</key>
 			<dict>
-				<key>input_plist_path</key>
+				<key>info_path</key>
 				<string>%pkgroot%/Applications/%NAME%.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>CFBundleShortVersionString</key>
+					<string>version</string>
+				</dict>
 			</dict>
 		</dict>
 		<dict>
