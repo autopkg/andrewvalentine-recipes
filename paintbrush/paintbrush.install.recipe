@@ -4,7 +4,7 @@
 	<key>Description</key>
 	<string>Downloads and installs the latest version of Paintbrush</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.paintbrush.install</string>
+	<string>com.github.andrewvalentine.install.paintbrush</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
