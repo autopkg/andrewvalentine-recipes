@@ -4,7 +4,7 @@
 	<key>Description</key>
 	<string>Downloads and installs the latest version of Cog</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.cog.install</string>
+	<string>com.github.andrewvalentine.install.cog</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
