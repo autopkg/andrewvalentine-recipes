@@ -1,0 +1,53 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the current release version of Create Recovery Partition Installer into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.create-recovery-partition-installer</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Create Recovery Partition Installer</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/support</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Support</string>
+			<key>description</key>
+			<string>Create and update OS X Recovery partitions. Drag and drop an OS X 10.7+ Installer on to this app to do so. This app will automatically download the required dmtest and cocoaDialog utilities the first time it's run.</string>
+			<key>developer</key>
+			<string>MagerValp</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>CreateRecoveryPartitionInstaller</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.create-recovery-partition-installer</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
