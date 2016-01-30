@@ -9,6 +9,7 @@
 	<dict>
 		<key>NAME</key>
 		<string>Curb</string>
+		<key>SPARKLE_FEED_URL</key>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
@@ -20,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>http://www.mrrsoftware.com/Downloads/Curb/CurbSoftwareUpdates.xml</string>
+				<string>%SPARKLE_FEED_URL%</string>
 			</dict>
 		</dict>
 		<dict>
