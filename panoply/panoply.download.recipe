@@ -28,8 +28,6 @@
                 </dict>
 				<key>re_pattern</key>
 				<string>PanoplyOSX-[\S]+\.dmg</string>
-				<key>result_output_var_name</key>
-				<string>panoply</string>
 			</dict>
 		</dict>
 		<dict>
@@ -38,7 +36,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://www.giss.nasa.gov/tools/panoply/%panoply%</string>
+				<string>http://www.giss.nasa.gov/tools/panoply/%match%</string>
 			</dict>
 		</dict>
 		<dict>
