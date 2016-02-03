@@ -1,0 +1,48 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest release version of Kodi.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.download.kodi-release</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Kodi</string>
+		<key>DOWNLOAD_URL</key>
+		<string>http://kodi.tv/download/</string>
+		<key>SEARCH_PATTERN</key>
+		<string>[^"]+\.dmg[^"]*</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%match%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<!-- Code Signature Verification not possible -->
+	</array>
+</dict>
+</plist>

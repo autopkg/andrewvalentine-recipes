@@ -2,36 +2,29 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest version of AudioMate</string>
+	<string>Downloads and installs the latest version of Decibel</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.install.audiomate</string>
+	<string>com.github.andrewvalentine.install.decibel</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AudioMate</string>
+		<string>Decibel</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.andrewvalentine.download.audiomate</string>
+    <string>decibel.download.recipe</string>
     <key>Process</key>
     <array>
-		<dict>
+        <dict>
             <key>Processor</key>
-            <string>InstallFromDMG</string>
+            <string>Copier</string>
             <key>Arguments</key>
             <dict>
-                <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
-				<key>items_to_copy</key>
-				<array>
-				<dict>
-					<key>source_item</key>
-					<string>%NAME%.app</string>
-					<key>destination_path</key>
-					<string>/Applications/</string>
-				</dict>
-			</array>
+                <key>destination_path</key>
+                <string>/Applications/Decibel.app</string>
+                <key>source_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
             </dict>
         </dict>
         <dict>

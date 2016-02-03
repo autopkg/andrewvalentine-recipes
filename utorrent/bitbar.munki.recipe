@@ -2,15 +2,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of AudioMate into Munki</string>
+	<string>Downloads and imports the current release version of BitBar into Munki</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.munki.audiomate</string>
+	<string>com.github.andrewvalentine.munki.bitbar</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AudioMate</string>
+		<string>BitBar</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/audiomate</string>
+		<string>apps/bitbar</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -18,13 +18,13 @@
 				<string>testing</string>
 			</array>
 			<key>category</key>
-			<string>Media</string>
+			<string>Utilities</string>
 			<key>description</key>
-			<string>AudioMate allows you to easily control all your device settings from the status bar, run actions when a device becomes available, display system notifications.</string>
+			<string>BitBar lets you put the output from any script or program right in your Mac OS X menu bar.</string>
 			<key>developer</key>
-			<string>The9Labs</string>
+			<string>Mat Ryer</string>
 			<key>display_name</key>
-			<string>%NAME%</string>
+			<string>BitBar</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -34,9 +34,29 @@
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.audiomate</string>
+	<string>com.github.andrewvalentine.download.bitbar</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

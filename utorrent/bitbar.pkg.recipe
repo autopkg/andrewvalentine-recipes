@@ -2,18 +2,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Create a package from the AudioMate download</string>
+	<string>Create a package from the BitBar download</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.pkg.audiomate</string>
+	<string>com.github.andrewvalentine.pkg.bitbar</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AudioMate</string>
+		<string>BitBar</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.recipe</string>
+	<string>com.github.andrewvalentine.download.bitbar</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -32,13 +32,11 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>Unarchiver</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/%NAME%.app</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/</string>
 			</dict>
 		</dict>
 		<dict>
@@ -53,7 +51,7 @@
 					<key>CFBundleShortVersionString</key>
 					<string>version</string>
 					<key>CFBundleIdentifier</key>
-					<string>identifier</string>
+					<string>versions</string>
 				</dict>
 			</dict>
 		</dict>
@@ -69,7 +67,7 @@
 					<key>pkgname</key>
 					<string>%NAME%</string>
 					<key>id</key>
-					<string>%identifier%</string>
+					<string>%version%</string>
 					<key>version</key>
 					<string>%version%</string>
 					<key>chown</key>
