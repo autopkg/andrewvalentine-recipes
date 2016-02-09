@@ -1,0 +1,36 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and installs the latest version of KisMac2</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.install.kismac2</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>KisMac2</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.andrewvalentine.download.kismac2</string>
+    <key>Process</key>
+    <array>
+		<dict>
+			<key>Processor</key>
+      <string>Copier</string>
+      <key>Arguments</key>
+      <dict>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.dmg/%NAME%.app</string>
+				<key>destination_path</key>
+				<string>/Applications/%NAME%.app</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+  	</dict>
+  </array>
+</dict>
+</plist>
