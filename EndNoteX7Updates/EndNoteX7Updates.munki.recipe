@@ -1,0 +1,67 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads, packages and imports EndNoteX7Updates into Munki. This recipe automatically sets the packages as an update_for EndNoteX7.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.EndNoteX7Updates</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>EndNoteX7Updates</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/EndNoteX7Updates</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>With its world-class speed and track record, EndNote puts your publishing in the lead and keeps you there. Out of the blocks with features like faster start up times and seasoned favorites like the Cite While You Write technology, EndNote is moving fast to deliver the world's most complete bibliographic solution..</string>
+			<key>developer</key>
+			<string>Thomson Reuters</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.jbaker10.pkg.EndNoteX7Updates</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>update_for</key>
+					<array>
+						<string>EndNote X7</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pkg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
