@@ -1,0 +1,54 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of PDFsam</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.download.pdfsam</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>PDFsam</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+			<key>Arguments</key>
+			<dict>
+				<key>github_repo</key>
+				<string>torakiki/pdfsam</string>
+				<key>asset_regex</key>
+				<string>[\S]+\.dmg</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%NAME%.app</string>
+				<key>requirements</key>
+				<string>identifier "org.pdfsam.community.App" and certificate leaf = H"28d1249831616e9acff9bc32756f699f559a2efe"</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
