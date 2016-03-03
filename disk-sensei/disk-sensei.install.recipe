@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest version of Bleep</string>
+	<string>Downloads and installs the latest version of Disk Sensei</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.install.disk-sensei</string>
 	<key>Input</key>
