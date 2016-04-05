@@ -10,7 +10,7 @@
 		<key>NAME</key>
 		<string>Kodi</string>
 		<key>DOWNLOAD_URL</key>
-		<string>http://kodi.tv/download/</string>
+		<string>https://kodi.tv/download/</string>
 		<key>SEARCH_PATTERN</key>
 		<string>[^"]+\.dmg[^"]*</string>
 	</dict>
@@ -42,7 +42,8 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-		<dict>
+		<!--v.16.0 is not codesigned. This step will be re-added as and when the vendor sorts this out.-->
+		<!--<dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
@@ -52,7 +53,7 @@
 				<key>requirement</key>
 				<string>cdhash H"db3a5bd02ace92e09f4fb3d2eff4daec180db055"</string>
 			</dict>
-		</dict>
+		</dict>-->
 	</array>
 </dict>
 </plist>
