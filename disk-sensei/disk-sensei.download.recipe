@@ -16,20 +16,11 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
-			<key>Arguments</key>
-			<dict>
-				<key>appcast_url</key>
-				<string>https://www.cindori.org/updates/disksensei/DiskSensei.xml</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%url%</string>
+				<string>https://s3.amazonaws.com/cindori/DiskSensei.dmg</string>
 			</dict>
 		</dict>
 		<dict>
