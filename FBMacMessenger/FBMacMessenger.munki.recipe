@@ -1,0 +1,53 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of FB-Mac-Messenger from https://fbmacmessenger.rsms.me, and imports into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.fbmacmessenger</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Messenger</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/fb-mac-messenger</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Communication</string>
+			<key>description</key>
+			<string>Open source project, wrapping Facebook Messenger as a native desktop Mac app.</string>
+			<key>developer</key>
+			<string>Rasmus Andersson</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.pkg.fbmacmessenger</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
