@@ -25,6 +25,8 @@
                 <string>/Applications/Suspicious Package.app</string>
                 <key>source_path</key>
                 <string>%RECIPE_CACHE_DIR%/downloads/SuspiciousPackage.dmg/Suspicious Package.app</string>
+				<key>overwrite</key>
+				<true/>
             </dict>
         </dict>
         <dict>
