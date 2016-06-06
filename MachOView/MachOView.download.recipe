@@ -1,0 +1,44 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of MachOView from SourceForge</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.download.MachOView</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>MachOView</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>SourceForgeURLProvider</string>
+			<key>Arguments</key>
+			<dict>
+				<key>SOURCEFORGE_PROJECT_ID</key>
+				<string>335161</string>
+				<key>SOURCEFORGE_FILE_PATTERN</key>
+				<string>%NAME%-[0-9\.]*\.dmg[^.sig]</string>
+				<!--<string>%NAME%_[0-9\.]*\.dmg[^.sig]</string>-->
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

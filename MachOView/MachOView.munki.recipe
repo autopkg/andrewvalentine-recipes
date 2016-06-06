@@ -1,0 +1,54 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the current release version of MachOView into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.MachOView</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>MachOView</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/MachOView</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.pkg.MachOView</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>pkginfo</key>
+				<dict>
+					<key>category</key>
+					<string>Utilities</string>
+					<key>description</key>
+					<string>MachOView is a visual Mach-O file browser. It provides a complete solution for exploring and in-place editing Intel and ARM binaries.</string>
+					<key>developer</key>
+					<string>Peter Saghelyi</string>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
