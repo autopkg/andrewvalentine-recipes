@@ -1,0 +1,53 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the current release version of MultiMarkdown into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.multimarkdown</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>MultiMarkdown</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/MultiMarkdown</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>MultiMarkdown is a tool to help turn minimally marked-up plain text into well formatted documents, including HTML, PDF, OPML, or OpenDocument. Specifically, Flat OpenDocument or ‘.fodt’, which can in turn be converted into RTF, Microsoft Word, or virtually any other word-processing format.</string>
+			<key>developer</key>
+			<string>Fletcher Penney</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>MultiMarkdown</string>
+			<key>unattended_install</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.multimarkdown</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
