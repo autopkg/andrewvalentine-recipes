@@ -1,0 +1,56 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads, packages and imports the current release version of rclone into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.rclone</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>rclone</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/rclone</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<!--<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>-->
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.pkg.rclone</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>pkginfo</key>
+				<dict>
+					<key>display_name</key>
+					<string>%NAME%</string>
+					<key>category</key>
+					<string>Cloud</string>
+					<key>description</key>
+					<string>Rclone is a command line program to sync files to and from Google Drive, Amazon Cloud Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Cloudfiles, Google Cloud Storage and Yandex. It&apos;s features include MD5/SHA1 hashes, preserved timestamps, partial and one-way syncs and cross platform syncing.</string>
+					<key>developer</key>
+					<string>Nick Craig-Wood</string>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
