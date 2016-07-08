@@ -9,8 +9,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Typora</string>
-		<key>MUNKI_REPO</key>
-		<string>/Volumes/munki_repo</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/typora</string>
 		<key>pkginfo</key>
