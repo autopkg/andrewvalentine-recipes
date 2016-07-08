@@ -9,10 +9,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Disk Sensei</string>
-		<key>MUNKI_REPO</key>
-		<string>/Volumes/munki_repo</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/disk-sensei</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
