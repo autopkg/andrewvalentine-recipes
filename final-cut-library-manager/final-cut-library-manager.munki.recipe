@@ -9,8 +9,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Final Cut Library Manager</string>
-		<key>MUNKI_REPO</key>
-		<string>/Volumes/munki_repo</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/final-cut-library-manager</string>
 		<key>pkginfo</key>
