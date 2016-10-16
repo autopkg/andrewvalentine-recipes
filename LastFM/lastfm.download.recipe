@@ -11,7 +11,7 @@
     	<key>NAME</key>
     	<string>LastFM</string>
 		<key>APPCAST_URL</key>
-		<string>http://cdn.last.fm/client/Mac/updates.xml</string>
+		<string>https://cdn.last.fm/client/Mac/updates.xml</string>
     </dict>
 	<key>MinimumVersion</key>
     	<string>0.4.2</string>
