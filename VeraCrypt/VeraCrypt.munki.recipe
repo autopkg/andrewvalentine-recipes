@@ -48,7 +48,7 @@
 					<string>IDRIX</string>
 					<key>requires</key>
 					<array>
-						<string>OSXFUSE</string>
+						<string>osxfuse</string>
 					</array>
 				</dict>
 			</dict>
