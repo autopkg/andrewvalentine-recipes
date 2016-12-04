@@ -1,0 +1,56 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of 360Controller</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.download.360Controller</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>360Controller</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+			<key>Arguments</key>
+			<dict>
+				<key>github_repo</key>
+				<string>360Controller/360Controller</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%pathname%/Install360Controller.pkg</string>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: Drew Mills (G947KKM5RL)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+				</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
