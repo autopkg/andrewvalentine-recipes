@@ -57,13 +57,13 @@
 					<array>
 						<dict>
 							<key>CFBundleIdentifier</key>
-							<string>com.install4j.0034-7691-1464-4754.23</string>
+							<string>com.install4j.0034-7691-1464-4754.339</string>
 							<key>CFBundleName</key>
 							<string>JabRef</string>
 							<key>CFBundleShortVersionString</key>
-							<string>3.5</string>
+							<string>3.7</string>
 							<key>CFBundleVersion</key>
-							<string>3.5</string>
+							<string>3.7</string>
 							<key>minosversion</key>
 							<string>10.7.3</string>
 							<key>path</key>
@@ -82,6 +82,10 @@
 
 # Cleanup the installer files
 /bin/rm -rf /tmp/JabRef\ Installer.app</string>
+					<key>requires</key>
+					<array>
+						<string>OracleJava8</string>
+					</array>
 					<key>uninstall_method</key>
 					<string>uninstall_script</string>
 					<key>uninstall_script</key>
