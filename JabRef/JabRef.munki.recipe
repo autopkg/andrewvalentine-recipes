@@ -32,7 +32,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.6.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.andrewvalentine.download.jabref</string>
 	<key>Process</key>
@@ -57,13 +57,13 @@
 					<array>
 						<dict>
 							<key>CFBundleIdentifier</key>
-							<string>com.install4j.0034-7691-1464-4754.339</string>
+							<string>com.install4j.0034-7691-1464-4754.23</string>
 							<key>CFBundleName</key>
 							<string>JabRef</string>
 							<key>CFBundleShortVersionString</key>
-							<string>3.7</string>
+							<string>3.8.2</string>
 							<key>CFBundleVersion</key>
-							<string>3.7</string>
+							<string>3.8.2</string>
 							<key>minosversion</key>
 							<string>10.7.3</string>
 							<key>path</key>
