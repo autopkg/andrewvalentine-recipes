@@ -1,0 +1,55 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the current release version of Texts into Munki. A license is required for use beyond the 30 day trial period (http://www.texts.io/purchase/). Note that Pandoc (https://github.com/jgm/pandoc/releases) is required for Texts to operate. AutoPkg recipes for Pandoc are available from jleggat-recipes.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.texts</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Texts</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Texts</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Text Editors</string>
+			<key>description</key>
+			<string>Texts is a word processor that uses plain text Markdown as file storage format. Documents can be published to PDF, HTML, DOCX, EPUB and other formats from a single source.</string>
+			<key>developer</key>
+			<string>Text Software Limited</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.pkg.texts</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+				<key>MUNKI_REPO</key>
+				<string>%MUNKI_REPO%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
