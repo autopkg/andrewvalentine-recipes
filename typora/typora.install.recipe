@@ -25,6 +25,8 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
 				<key>destination_path</key>
 				<string>/Applications/%NAME%.app</string>
+				<key>overwrite</key>
+				<true/>
 			</dict>
         </dict>
         <dict>
