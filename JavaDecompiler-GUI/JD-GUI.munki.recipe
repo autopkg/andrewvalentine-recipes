@@ -1,0 +1,55 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the current release version of JD-GUI into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.jdgui</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>JD-GUI</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/JD-GUI</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Programming</string>
+			<key>description</key>
+			<string>A standalone graphical utility that displays Java source codes of “.class” files.&lt;br&gt;&lt;br&gt;The project home page can be found &lt;a href="http://jd.benow.ca"&gt;here&lt;/a&gt;.</string>
+			<key>developer</key>
+			<string>java-decompiler</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.jdgui</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>MUNKI_REPO</key>
+				<string>%MUNKI_REPO%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
