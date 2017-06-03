@@ -1,0 +1,30 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of the GPGSuite using gerardkok's download recipe and installs</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.install.GPGSuite</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>GPGSuite</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.1</string>
+    <key>ParentRecipe</key>
+    <string>com.github.gerardkok.download.GPGSuite</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>Installer</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%/Install.pkg</string>
+        	</dict>
+		</dict>
+   	</array>
+</dict>
+</plist>
