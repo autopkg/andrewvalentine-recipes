@@ -11,7 +11,7 @@
 		<string>KisMac2</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.3.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -31,7 +31,17 @@
 			<key>Processor</key>
 			<string>Unarchiver</string>
 		</dict>
-		<!--CodeSignatureVerification fails due to obsolescence in $app/Growl.framework-->
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.dmg/%NAME%.app</string>
+				<key>requirement</key>
+				<string>identifier "com.igrsoft.kismac" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Vitalii Parovishnyk (6RW5R6WG96)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>
