@@ -18,26 +18,13 @@
     <array>
 		<dict>
             <key>Processor</key>
-            <string>InstallFromDMG</string>
+            <string>Copier</string>
             <key>Arguments</key>
             <dict>
-                <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
-				<key>items_to_copy</key>
-				<array>
-					<dict>
-						<key>source_item</key>
-						<string>Hyper.app</string>
-						<key>destination_path</key>
-						<string>/Applications</string>
-						<key>user</key>
-						<string>root</string>
-						<key>group</key>
-						<string>wheel</string>
-						<key>mode</key>
-						<string>755</string>
-					</dict>
-				</array>
+				<key>destination_path</key>
+				<string>/Applications/%NAME%.app</string>
+                <key>source_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
 			</dict>
         </dict>
         <dict>
