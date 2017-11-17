@@ -2,15 +2,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of KisMac2 into Munki</string>
+	<string>Downloads and imports the current release version of Hyper into Munki</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.munki.kismac2</string>
+	<string>com.github.andrewvalentine.munki.hyper</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>KisMac2</string>
+		<string>Hyper</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/kismac2</string>
+		<string>apps/Hyper</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -18,11 +18,11 @@
 				<string>testing</string>
 			</array>
 			<key>category</key>
-			<string>Utilities</string>
+			<string>Terminal Emulators</string>
 			<key>description</key>
-			<string>A wireless network discovery and security tool.</string>
+			<string>A highly extensible terminal emulator, built on Electron.</string>
 			<key>developer</key>
-			<string>IGRSoft</string>
+			<string>Guillermo Rauch</string>
 			<key>display_name</key>
 			<string>%NAME%</string>
 			<key>name</key>
@@ -32,9 +32,9 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.3.1</string>
+	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.kismac2</string>
+	<string>com.github.andrewvalentine.download.Hyper</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -43,7 +43,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.dmg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<key>MUNKI_REPO</key>
+				<string>%MUNKI_REPO%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
