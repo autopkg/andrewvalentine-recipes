@@ -2,7 +2,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current version of TurningPoint into Munki. An postinstall script is provided that automates the setup of integration with Microsoft Powerpoint. An uninstall script is provided that removes the .app and the CFMSupport directory. If you do not wish to use either of these, you should address this in your recipe override. If you work in a business or educational environment, you should be aware of what version of the software your organization currently supports and is licensed for before using this recipe.</string>
+	<string>Downloads and imports the current version of TurningPoint into Munki. Note the following:
+
+- A preinstall script is provided that removes the old TurningPoint.app. As Turning Technologies changed the bundle name to TurningPoint App.app, this step is required if you want to remove the deprecated bundle as part of the update.
+- A postinstall script is provided that automates the setup of integration with Microsoft Powerpoint.
+- An uninstall script is provided that removes the .app and the CFMSupport directory.
+
+If you do not wish to use these scripts, you should address this in your recipe override.
+
+If you work in a business or educational environment, you should be aware of what version of the software your organization currently supports and is licensed for before using this recipe.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.TurningPoint</string>
 	<key>Input</key>
@@ -43,7 +51,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+				<string>%pathname%/%APPNAME%.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
@@ -61,8 +69,6 @@
 # Declare variables
 
 LIB_DIR="$3/Library/CFMSupport"
-TP_DY_LIB="$3/Applications/TurningPoint.app/Contents/Frameworks/TTSharedLib.1.0.0.dylib"
-TP_PP_LIB="$3/Applications/TurningPoint.app/Contents/MacOS/powerpoint-message-handler.1.0.0"
 
 # Check for CFMSupport directory
 
@@ -75,16 +81,29 @@ fi
 
 # Copy files
 
-/bin/cp $TP_DY_LIB $LIB_DIR
-/bin/cp $TP_PP_LIB $LIB_DIR
+/bin/cp "/Applications/TurningPoint App.app/Contents/Frameworks/TTSharedLib.1.0.0.dylib" $LIB_DIR
+/bin/cp "/Applications/TurningPoint App.app/Contents/MacOS/powerpoint-message-handler.1.0.0" $LIB_DIR
 
 exit 0</string>
+					<key>preinstall_script</key>
+					<string>#!/bin/bash
+
+    echo "Checking for deprecated TurningPoint installation..."
+    
+    if [ -d "/Applications/TurningPoint.app" ]; then
+    echo "Deprecated TurningPoint.app found...removing..."
+    /bin/rm -rf "/Applications/TurningPoint.app"
+else
+    echo "No deprecated install found...proceeding with new install..."
+fi
+    
+    exit 0</string>
 					<key>uninstall_method</key>
 					<string>uninstall_script</string>
 					<key>uninstall_script</key>
 					<string>#!/bin/bash
 
-/bin/rm -rf "/Applications/TurningPoint.app"
+/bin/rm -rf "/Applications/TurningPoint App.app"
 
 /bin/rm -rf "/Library/CFMSupport"
 
