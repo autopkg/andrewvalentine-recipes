@@ -25,6 +25,8 @@
 				<string>/Applications/%NAME%.app</string>
                 <key>source_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<key>overwrite</key>
+				<string>true</string>
 			</dict>
         </dict>
         <dict>
