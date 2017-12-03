@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest version of Franz</string>
+	<string>Downloads and installs the latest release of Franz v5 from Github.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.install.franz</string>
 	<key>Input</key>
