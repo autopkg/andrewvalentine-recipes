@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of Franz into Munki</string>
+	<string>Downloads and imports the current release of Franz v5 into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.franz</string>
 	<key>Input</key>

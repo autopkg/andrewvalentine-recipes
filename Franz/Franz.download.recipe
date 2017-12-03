@@ -2,13 +2,19 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of the Franz from Github.</string>
+	<string>Downloads the latest release of Franz v5 from Github.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.franz</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>Franz</string>
+		<key>GITHUB_NAME</key>
+		<string>franz</string>
+		<key>GITHUB_VERSION</key>
+		<string>5.0.0</string>
+		<key>RELEASE_VERSION</key>
+		<string>beta</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -20,9 +26,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>meetfranz/franz-app</string>
+				<string>meetfranz/franz</string>
 				<key>asset_regex</key>
-				<string>%NAME%-darwin-x64-[\S]+\.dmg</string>
+				<string>%GITHUB_NAME%-%GITHUB_VERSION%-%RELEASE_VERSION%.[\S]+\.dmg</string>
 			</dict>
 		</dict>
 		<dict>
@@ -48,7 +54,7 @@
 				<key>input_path</key>
 				<string>%pathname%/%NAME%.app</string>
 				<key>requirement</key>
-				<string>identifier "io.adlk.franz" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = TAC9P63ANZ</string>
+				<string>identifier "com.meetfranz.franz" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = TAC9P63ANZ</string>
 			</dict>
 		</dict>
 	</array>
