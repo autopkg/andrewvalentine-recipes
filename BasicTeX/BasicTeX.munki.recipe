@@ -1,0 +1,55 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the current version of BasicTeX into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.basictex</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>BasicTeX</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/BasicTeX</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>TeX</string>
+			<key>description</key>
+			<string>BasicTeX is a smaller alternate TeX Distribution for users who do not want to download the full TeX Live package. It contains only the TeX Live piece of the full distribution, does not contain the GUI programs or Ghostscript, and does not overwrite the full distribution. More information on the contents of the distribution can be found on the &lt;a href="http://www.tug.org/mactex/morepackages.html"&gt;MacTeX webpages&lt;/a&gt;.</string>
+			<key>developer</key>
+			<string>TeX Users Group</string>
+			<key>display_name</key>
+			<string>Basic TeX</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.basictex</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>MUNKI_REPO</key>
+				<string>%MUNKI_REPO%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
