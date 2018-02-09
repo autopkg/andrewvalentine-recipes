@@ -1,0 +1,51 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the latest version of Micro.blog into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.Microblog</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Micro.blog</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Microblog</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Blogging</string>
+			<key>description</key>
+			<string>A community for microblogs. Built on open standards.</string>
+			<key>developer</key>
+			<string>Micro.blog, LLC</string>
+			<key>display_name</key>
+			<string>Micro.blog</string>
+			<key>name</key>
+			<string>%NAME%</string>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.Microblog</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
