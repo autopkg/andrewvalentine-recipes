@@ -1,0 +1,64 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the latest version of Pocket Casts into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.PocketCasts</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_NAME</key>
+		<string>Pocket Casts</string>
+		<key>NAME</key>
+		<string>PocketCasts</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/PocketCasts</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Audio</string>
+			<key>description</key>
+			<string>A podcast app. Discover new favourites, see current trends, sync your subscriptions, playback and filters between Windows, Android, iOS and macOS devices, and backup your data to the cloud. Your commute never sounded this good.</string>
+			<key>developer</key>
+			<string>Shifty Jelly</string>
+			<key>display_name</key>
+			<string>%APP_NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.PocketCasts</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%APP_NAME%.app</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.dmg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
