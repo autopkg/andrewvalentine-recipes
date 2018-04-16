@@ -8,9 +8,9 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Mullvad</string>
+		<string>MullvadVPN</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/Mullvad</string>
+		<string>apps/%NAME%</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -27,12 +27,10 @@
 			<string>%NAME%</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>unattended_install</key>
-			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.andrewvalentine.download.mullvad</string>
 	<key>Process</key>
@@ -44,8 +42,6 @@
 			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
-				<key>MUNKI_REPO</key>
-				<string>%MUNKI_REPO%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

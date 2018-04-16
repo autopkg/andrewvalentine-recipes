@@ -8,10 +8,10 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Mullvad</string>
+		<string>MullvadVPN</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.6.0</string>
+    <string>1.0.0</string>
     <key>ParentRecipe</key>
     <string>com.github.andrewvalentine.download.mullvad</string>
     <key>Process</key>
@@ -22,12 +22,12 @@
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
+                <string>%pathname%</string>
 				<key>items_to_copy</key>
 				<array>
 					<dict>
 						<key>source_item</key>
-						<string>Mullvad.app</string>
+						<string>MullvadVPN.app</string>
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>user</key>
