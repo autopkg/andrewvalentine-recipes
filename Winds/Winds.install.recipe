@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest version of Winds</string>
+	<string>Downloads and installs the latest version of the Winds RSS and Podcast feed reader</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.install.Winds</string>
 	<key>Input</key>
