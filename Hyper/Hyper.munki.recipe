@@ -34,7 +34,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.Hyper</string>
+	<string>com.github.andrewvalentine.download.hyper</string>
 	<key>Process</key>
 	<array>
 		<dict>
