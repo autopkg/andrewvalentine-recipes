@@ -34,21 +34,30 @@
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.Hyper</string>
+	<string>com.github.andrewvalentine.download.hyper</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>MunkiImporter</string>
+			<string>DmgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
-				<key>MUNKI_REPO</key>
-				<string>%MUNKI_REPO%</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
 		</dict>
 	</array>
 </dict>
