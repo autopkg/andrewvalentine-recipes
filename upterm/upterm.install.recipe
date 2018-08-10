@@ -2,18 +2,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest version of Black Screen from GitHub</string>
+	<string>Downloads and installs the latest version of upterm from GitHub</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.install.blackscreen</string>
+	<string>com.github.andrewvalentine.install.upterm</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Black Screen</string>
+		<string>upterm</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.5.0</string>
+    <string>0.6.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.andrewvalentine.download.blackscreen</string>
+    <string>com.github.andrewvalentine.download.upterm</string>
     <key>Process</key>
     <array>
 		<dict>

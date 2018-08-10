@@ -2,16 +2,16 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Black Screen from GitHub. The .app bundle is not signed.</string>
+	<string>Downloads the latest version of upterm from GitHub. The .app bundle is not code signed.</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.download.blackscreen</string>
+	<string>com.github.andrewvalentine.download.upterm</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>BlackScreen</string>
+		<string>upterm</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -20,9 +20,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>vshatskyi/black-screen</string>
+				<string>railsware/upterm</string>
 				<key>asset_regex</key>
-				<string>black-screen-[\S]+\.dmg</string>
+				<string>%NAME%-[\S]+\.dmg</string>
 			</dict>
 		</dict>
 		<dict>

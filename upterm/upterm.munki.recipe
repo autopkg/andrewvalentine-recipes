@@ -2,15 +2,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of Black Screen into Munki</string>
+	<string>Downloads and imports the current release version of upterm into Munki</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.munki.blackscreen</string>
+	<string>com.github.andrewvalentine.munki.upterm</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>BlackScreen</string>
+		<string>upterm</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/BlackScreen</string>
+		<string>apps/upterm</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -22,9 +22,9 @@
 			<key>description</key>
 			<string>A terminal emulator and interactive shell, built on Electron, TypeScript and ReactJS.</string>
 			<key>developer</key>
-			<string>vshatskyi</string>
+			<string>railsware</string>
 			<key>display_name</key>
-			<string>Black Screen</string>
+			<string>upterm</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -34,7 +34,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.blackscreen</string>
+	<string>com.github.andrewvalentine.download.upterm</string>
 	<key>Process</key>
 	<array>
 		<dict>
