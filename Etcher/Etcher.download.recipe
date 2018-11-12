@@ -22,7 +22,7 @@
 				<key>asset_regex</key>
 				<string>%NAME%-[\S]+\.dmg</string>
 				<key>github_repo</key>
-				<string>resin-io/etcher</string>
+				<string>balena-io/etcher</string>
 			</dict>
 		</dict>
 		<dict>
