@@ -1,0 +1,32 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and installs the latest release version of Ghostlab3. A license is required from Vanamco for continued use.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.install.Ghostlab3</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Ghostlab3</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.Ghostlab3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Copier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<key>destination_path</key>
+				<string>/Applications/%NAME%.app</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
