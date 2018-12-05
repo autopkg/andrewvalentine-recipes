@@ -1,0 +1,42 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and installs the latest version of the balena-etcher-cli from GitHub. This is an experimental tool. Balena.io advise installing to /opt/etcher-cli as per https://www.balena.io/etcher/cli. AutoPkg cannot create a non-existent directory in this location, so this recipe uses /usr/local/bin as the install location. You may modify this if required.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.install.Etcher-CLI</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Etcher-CLI</string>
+		<key>INSTALL_LOCATION</key>
+		<string>/usr/local/bin/etcher-cli</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.andrewvalentine.download.Etcher-CLI</string>
+    <key>Process</key>
+    <array>
+		<dict>
+            <key>Processor</key>
+            <string>Unarchiver</string>
+        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>Copier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%INSTALL_LOCATION%</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/*-dist</string>
+			</dict>
+		</dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
