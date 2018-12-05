@@ -8,7 +8,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Etcher</string>
+		<string>balenaEtcher</string>
     </dict>
     <key>MinimumVersion</key>
     <string>1.0.0</string>

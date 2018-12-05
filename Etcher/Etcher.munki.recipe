@@ -8,7 +8,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Etcher</string>
+		<string>balenaEtcher</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/Etcher</string>
 		<key>pkginfo</key>
@@ -18,11 +18,11 @@
 				<string>testing</string>
 			</array>
 			<key>category</key>
-			<string>Audio</string>
+			<string>Utilities</string>
 			<key>description</key>
 			<string>Burn images to SD cards and USB drives, safely and easily.</string>
 			<key>developer</key>
-			<string>resin.io</string>
+			<string>balena.io</string>
 			<key>display_name</key>
 			<string>%NAME%</string>
 			<key>name</key>
