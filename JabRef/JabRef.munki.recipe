@@ -43,8 +43,6 @@
 					<string>%DEVELOPER%</string>
 					<key>display_name</key>
 					<string>%DISPLAY_NAME%</string>
-					<key>force_munkiimport</key>
-					<true/>
 					<key>items_to_copy</key>
 					<array>
 						<dict>
