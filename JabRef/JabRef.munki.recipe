@@ -23,8 +23,6 @@
 			<string>JabRef is an open source bibliography reference manager, which makes use of BibTeX and BibLaTeX as native formats. JabRef provides an interface for editing BibTeX files, for importing data from online scientific databases, and for managing and searching BibTeX files.</string>
 			<key>developer</key>
 			<string>The JabRef Team</string>
-			<key>name</key>
-			<string>%NAME%</string>
 			<key>display_name</key>
 			<string>JabRef</string>
 			<key>unattended_install</key>
@@ -74,6 +72,8 @@
 							<string>CFBundleShortVersionString</string>
 						</dict>
 					</array>
+					<key>name</key>
+					<string>%NAME%</string>
 					<key>postinstall_script</key>
 					<string>#!/bin/bash
 
