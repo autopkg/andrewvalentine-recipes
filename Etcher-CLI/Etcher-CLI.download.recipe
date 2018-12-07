@@ -2,13 +2,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Etcher from Github</string>
+	<string>Downloads the latest version of Etcher-CLI from Github</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.download.Etcher</string>
+	<string>com.github.andrewvalentine.download.Etcher-CLI</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>balenaEtcher</string>
+		<string>Etcher-CLI</string>
+		<key>ARCHIVE_NAME</key>
+		<string>balena-etcher-cli</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -20,7 +22,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>%NAME%-[\S]+\.dmg</string>
+				<string>%ARCHIVE_NAME%-[\S]+\-darwin-x64.tar.gz</string>
 				<key>github_repo</key>
 				<string>balena-io/etcher</string>
 			</dict>
@@ -37,17 +39,6 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-			<key>Arguments</key>
-				<dict>
-					<key>input_path</key>
-					<string>%pathname%/balenaEtcher.app</string>
-					<key>requirement</key>
-					<string>identifier "io.balena.etcher" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "66H43P8FRG"</string>
-				</dict>
 		</dict>
 	</array>
 </dict>
