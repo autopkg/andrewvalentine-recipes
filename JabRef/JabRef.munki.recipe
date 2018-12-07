@@ -24,7 +24,7 @@
 			<key>developer</key>
 			<string>The JabRef Team</string>
 			<key>name</key>
-			<string>JabRef</string>
+			<string>%NAME%</string>
 			<key>display_name</key>
 			<string>JabRef</string>
 			<key>unattended_install</key>
@@ -39,10 +39,10 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
+			<string>MunkiImporter</string>
 			<key>Arguments</key>
 			<dict>
-				<key>additional_pkginfo</key>
+				<key>pkginfo</key>
 				<dict>
 					<key>items_to_copy</key>
 					<array>
@@ -61,9 +61,9 @@
 							<key>CFBundleName</key>
 							<string>JabRef</string>
 							<key>CFBundleShortVersionString</key>
-							<string>3.8.2</string>
+							<string>%version%</string>
 							<key>CFBundleVersion</key>
-							<string>3.8.2</string>
+							<string>%version%</string>
 							<key>minosversion</key>
 							<string>10.7.3</string>
 							<key>path</key>
@@ -77,11 +77,22 @@
 					<key>postinstall_script</key>
 					<string>#!/bin/bash
 
-# Run the installer. This replicates the activity of the JabRef Installer.app when run interactively. Options determined from the brew cask recipe (https://github.com/caskroom/homebrew-cask/blob/master/Casks/jabref.rb)
-/tmp/JabRef\ Installer.app/Contents/MacOS/JavaApplicationStub -q -V createDesktopLinkAction$Boolean=false -V addToDockAction$Boolean=false -V showFileAction$Boolean=false -V sys.installationDir=/Applications -V executionLauncherAction$Boolean=false
+# Run the installer.
+
+# This replicates the activity of the JabRef Installer.app when run interactively.
+# Options determined from the brew cask recipe (https://github.com/caskroom/homebrew-cask/blob/master/Casks/jabref.rb)
+
+/tmp/JabRef\ Installer.app/Contents/MacOS/JavaApplicationStub -q -V \
+createDesktopLinkAction$Boolean=false -V \
+addToDockAction$Boolean=false -V \
+showFileAction$Boolean=false -V \
+sys.installationDir=/Applications -V \
+executionLauncherAction$Boolean=false
 
 # Cleanup the installer files
-/bin/rm -rf /tmp/JabRef\ Installer.app</string>
+/bin/rm -rf /tmp/JabRef\ Installer.app
+
+exit 0</string>
 					<key>requires</key>
 					<array>
 						<string>OracleJava8</string>
@@ -90,21 +101,17 @@
 					<string>uninstall_script</string>
 					<key>uninstall_script</key>
 					<string>#!/bin/bash
-/bin/rm -rf /Applications/JabRef.app</string>
-					</dict>
-				</dict>
+
+/bin/rm -rf /Applications/JabRef.app
+
+exit 0</string>
 			</dict>
-			<dict>
-				<key>Arguments</key>
-				<dict>
-					<key>pkg_path</key>
-					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
+				<key>pkg_path</key>
+					<string>%pathname%</string>
 					<key>repo_subdirectory</key>
-					<string>apps/JabRef</string>
+					<string>%MUNKI_REPO_SUBDIR%</string>
 				</dict>
-				<key>Processor</key>
-				<string>MunkiImporter</string>
 			</dict>
-		</array>
-	</dict>
+</array>
+</dict>
 </plist>
