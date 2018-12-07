@@ -7,27 +7,20 @@
 	<string>com.github.andrewvalentine.munki.jabref</string>
 	<key>Input</key>
 	<dict>
+		<key>CATEGORY</key>
+		<string>Referencing</string>
+		<key>DEVELOPER</key>
+		<string>The JabRef Team</string>
+		<key>DISPLAY_NAME</key>
+		<string>JabRef</string>
+		<key>DESCRIPTION</key>
+		<string>JabRef is an open source bibliography reference manager, which makes use of BibTeX and BibLaTeX as native formats. JabRef provides an interface for editing BibTeX files, for importing data from online scientific databases, and for managing and searching BibTeX files.</string>
 		<key>NAME</key>
 		<string>JabRef</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/JabRef</string>
-		<key>pkginfo</key>
-		<dict>
-			<key>catalogs</key>
-			<array>
-				<string>testing</string>
-			</array>
-			<key>category</key>
-			<string>Reference</string>
-			<key>description</key>
-			<string>JabRef is an open source bibliography reference manager, which makes use of BibTeX and BibLaTeX as native formats. JabRef provides an interface for editing BibTeX files, for importing data from online scientific databases, and for managing and searching BibTeX files.</string>
-			<key>developer</key>
-			<string>The JabRef Team</string>
-			<key>display_name</key>
-			<string>JabRef</string>
-			<key>unattended_install</key>
-			<true/>
-		</dict>
+		<key>REQUIRES</key>
+		<string>OracleJava8</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -42,6 +35,14 @@
 			<dict>
 				<key>pkginfo</key>
 				<dict>
+					<key>category</key>
+					<string>%CATEGORY%</string>
+					<key>description</key>
+					<string>%DESCRIPTION%</string>
+					<key>developer</key>
+					<string>%DEVELOPER%</string>
+					<key>display_name</key>
+					<string>%DISPLAY_NAME%</string>
 					<key>items_to_copy</key>
 					<array>
 						<dict>
@@ -95,7 +96,7 @@ executionLauncherAction$Boolean=false
 exit 0</string>
 					<key>requires</key>
 					<array>
-						<string>OracleJava8</string>
+						<string>%REQUIRES%</string>
 					</array>
 					<key>uninstall_method</key>
 					<string>uninstall_script</string>
@@ -112,6 +113,6 @@ exit 0</string>
 					<string>%MUNKI_REPO_SUBDIR%</string>
 				</dict>
 			</dict>
-</array>
-</dict>
+		</array>
+	</dict>
 </plist>
