@@ -19,6 +19,8 @@
 			<string>GitHubReleasesInfoProvider</string>
 			<key>Arguments</key>
 			<dict>
+				<key>include_prereleases</key>
+				<string>true</string>
 				<key>asset_regex</key>
 				<string>%NAME%-[\S]+\.dmg</string>
 				<key>github_repo</key>
