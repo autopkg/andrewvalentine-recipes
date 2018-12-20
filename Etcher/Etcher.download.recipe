@@ -2,11 +2,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Etcher from Github</string>
+	<string>Downloads balenaEtcher from Github. If you run this recipe as is, it will download v.1.4.4, which has not been updated since April 2018. At the time of writing, all subsequent releases are tagged as pre-releases. If you want the most recent version of the app, you should set PRERELEASE to a non-empty string, either with Input in an override or via the -k option, i.e. `-k PRERELEASE=yes`</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.Etcher</string>
 	<key>Input</key>
 	<dict>
+		<key>PRERELEASE</key>
+		<string></string>
 		<key>NAME</key>
 		<string>balenaEtcher</string>
 	</dict>
@@ -23,6 +25,8 @@
 				<string>%NAME%-[\S]+\.dmg</string>
 				<key>github_repo</key>
 				<string>balena-io/etcher</string>
+				<key>include_prereleases</key>
+				<string>%PRERELEASE%</string>
 			</dict>
 		</dict>
 		<dict>
