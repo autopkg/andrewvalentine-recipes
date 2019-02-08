@@ -9,8 +9,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Franz</string>
-		<key>GITHUB_NAME</key>
-		<string>franz</string>
 		<key>GITHUB_VERSION</key>
 		<string>5.0.0</string>
 		<key>RELEASE_VERSION</key>
@@ -28,7 +26,7 @@
 				<key>github_repo</key>
 				<string>meetfranz/franz</string>
 				<key>asset_regex</key>
-				<string>%GITHUB_NAME%-%GITHUB_VERSION%-%RELEASE_VERSION%.[\S]+\.dmg</string>
+				<string>%NAME%-%GITHUB_VERSION%-%RELEASE_VERSION%.[\S]+\.dmg</string>
 			</dict>
 		</dict>
 		<dict>
