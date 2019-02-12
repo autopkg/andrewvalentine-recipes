@@ -2,11 +2,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest release of Franz v5 from Github.</string>
+	<string>Downloads and installs Franz from Github. Set INCLUDE_PRERELEASES to a non-empty value to download and install pre-release software.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.install.franz</string>
 	<key>Input</key>
 	<dict>
+		<key>INCLUDE_PRERELEASES</key>
+		<string></string>
 		<key>NAME</key>
 		<string>Franz</string>
     </dict>
@@ -26,10 +28,10 @@
                 <key>items_to_copy</key>
 				<array>
 					<dict>
-						<key>source_item</key>
-						<string>%NAME%.app</string>
 						<key>destination_path</key>
 						<string>/Applications/</string>
+						<key>source_item</key>
+						<string>%NAME%.app</string>
 					</dict>
 				</array>
 			</dict>
