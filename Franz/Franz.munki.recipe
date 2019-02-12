@@ -2,11 +2,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release of Franz v5 into Munki.</string>
+	<string>Downloads and imports Franz to Munki. Set INCLUDE_PRERELEASES to a non-empty value to download and import pre-release software.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.franz</string>
 	<key>Input</key>
 	<dict>
+		<key>INCLUDE_PRERELEASES</key>
+		<string></string>
 		<key>NAME</key>
 		<string>Franz</string>
 		<key>MUNKI_REPO_SUBDIR</key>
