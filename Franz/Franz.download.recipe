@@ -2,17 +2,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest release of Franz v5 from Github.</string>
+	<string>Downloads Franz from Github. Set INCLUDE_PRERELEASES to a non-empty value to download pre-release software.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.franz</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>Franz</string>
-		<key>GITHUB_VERSION</key>
-		<string>5.0.0</string>
-		<key>RELEASE_VERSION</key>
-		<string>beta</string>
+		<key>INCLUDE_PRERELEASES</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -23,10 +21,12 @@
 			<string>GitHubReleasesInfoProvider</string>
 			<key>Arguments</key>
 			<dict>
+				<key>asset_regex</key>
+				<string>%NAME%-[\S]+\.dmg</string>
 				<key>github_repo</key>
 				<string>meetfranz/franz</string>
-				<key>asset_regex</key>
-				<string>%NAME%-%GITHUB_VERSION%-%RELEASE_VERSION%.[\S]+\.dmg</string>
+				<key>include_prereleases</key>
+				<string>%INCLUDE_PRERELEASES%</string>
 			</dict>
 		</dict>
 		<dict>
@@ -36,8 +36,6 @@
 			<dict>
 				<key>url</key>
 				<string>%url%</string>
-				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
 			</dict>
 		</dict>
 		<dict>
