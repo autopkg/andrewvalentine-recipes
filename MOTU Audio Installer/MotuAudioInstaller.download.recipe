@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of the MOTU Audio Installer</string>
+		<key>Identifier</key>
+		<string>com.github.andrewvalentine.download.MotuAudioInstaller</string>
+		<key>Input</key>
+		<dict>
+			<key>DOWNLOAD_URL</key>
+			<string>http://motu.com/download</string>
+			<key>NAME</key>
+			<string>MotuAudioInstaller</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>0.6.1</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Processor</key>
+				<string>URLTextSearcher</string>
+				<key>Arguments</key>
+				<dict>
+					<key>re_pattern</key>
+					<string>https://cdn-data.motu.com/downloads/audio/driver/\d{6}/MOTU%20Audio%20Installer%201.6%20\(\d+\).pkg</string>
+					<key>url</key>
+					<string>%DOWNLOAD_URL%</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+				<key>Arguments</key>
+				<dict>
+					<key>filename</key>
+					<string>%NAME%.pkg</string>
+					<key>url</key>
+					<string>%match%</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+				<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%pathname%</string>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: MOTU (KRCLLMGZ2D)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+</plist>
