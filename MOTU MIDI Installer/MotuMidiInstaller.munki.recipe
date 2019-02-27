@@ -34,7 +34,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.MotuAudioInstaller</string>
+	<string>com.github.andrewvalentine.download.MotuMidiInstaller</string>
 	<key>Process</key>
 	<array>
 		<dict>
