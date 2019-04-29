@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of VeraCrypt from SourceForge</string>
+	<string>Downloads the latest version of VeraCrypt.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.VeraCrypt</string>
 	<key>Input</key>
@@ -11,34 +12,86 @@
 		<string>VeraCrypt</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>SourceForgeURLProvider</string>
 			<key>Arguments</key>
 			<dict>
-				<key>SOURCEFORGE_PROJECT_ID</key>
-				<string>1883601</string>
-				<key>SOURCEFORGE_FILE_PATTERN</key>
-				<string>%NAME%_[0-9\.]*\.dmg[^.sig]</string>
+				<key>re_pattern</key>
+				<string>https:\/\/launchpad\.net\/veracrypt\/trunk\/.*\..*\/\+download\/VeraCrypt_(?P&lt;downloadversion&gt;\d*\.\d*)\.dmg</string>
+				<key>url</key>
+				<string>https://launchpad.net/veracrypt</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>CHECK_FILESIZE_ONLY</key>
-				<string>TRUE</string>
+				<key>url</key>
+				<string>https://launchpad.net/veracrypt/trunk/%downloadversion%/+download/VeraCrypt_%downloadversion%.dmg</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: IDRIX (Z933746L2S)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%/VeraCrypt_Installer.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%/VeraCrypt_Installer.pkg</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack/veracrypt.pkg/Payload</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload/Applications/VeraCrypt.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
