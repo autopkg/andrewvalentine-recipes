@@ -2,15 +2,19 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of Mullvad into Munki</string>
+	<string>Downloads and imports the current version of Mullvad into Munki. Expands the pkg and use PlistReader to determine minimum_os_version.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.mullvad</string>
 	<key>Input</key>
 	<dict>
+		<key>APP_NAME</key>
+		<string>Mullvad VPN</string>
 		<key>NAME</key>
 		<string>MullvadVPN</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
+		<key>MULLVAD_PKG</key>
+		<string>net.mullvad.vpn.pkg</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -27,6 +31,20 @@
 			<string>%NAME%</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/bash
+
+# The .pkg installer for Mullvad VPN.app does not install the app LaunchDaemon. That file is created by a postinstall script. We therefore need to replicate the functionality of Mullvad's bundled uninstall script. This can be found at:
+# Mullvad VPN.app/Contents/Resources/uninstall.sh
+
+DAEMON_PLIST_PATH="/Library/LaunchDaemons/net.mullvad.daemon.plist"
+
+echo "Stopping and removing mullvad-daemon system daemon."
+
+/bin/launchctl unload -w "$DAEMON_PLIST_PATH"
+/bin/rm -f "$DAEMON_PLIST_PATH"
+
+exit 0</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -35,6 +53,54 @@
 	<string>com.github.andrewvalentine.download.mullvad</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot/payload</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot/%MULLVAD_PKG%/Payload</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>info_path</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot/payload/%APP_NAME%.app/Contents/Info.plist</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>LSMinimumSystemVersion</key>
+					<string>min_os_version</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>minimum_os_version</key>
+					<string>%min_os_version%</string>
+				</dict>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
