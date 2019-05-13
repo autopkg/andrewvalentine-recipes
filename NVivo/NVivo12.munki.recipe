@@ -8,10 +8,12 @@
     <string>com.github.andrewvalentine.munki.NVivo12</string>
     <key>Input</key>
     <dict>
+		<key>DISPLAY_NAME</key>
+		<string>NVivo 12</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/nvivo</string>
+        <string>apps/NVivo</string>
         <key>NAME</key>
-        <string>NVivo</string>
+        <string>NVivo12</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -29,7 +31,7 @@
     		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
-            <string>%NAME%</string>
+            <string>%DISPLAY_NAME%</string>
     		<key>unattended_install</key>
     		<true/>
     	</dict>
@@ -37,7 +39,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.andrewvalentine.download.NVivo12</string>
+	<string>com.github.joshua-d-miller.download.nvivo</string>
     <key>Process</key>
     <array>
         <dict>
