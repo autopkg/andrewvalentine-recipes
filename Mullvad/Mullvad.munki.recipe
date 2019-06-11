@@ -17,6 +17,10 @@
 		<string>net.mullvad.vpn.pkg</string>
 		<key>pkginfo</key>
 		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Mullvad VPN</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
@@ -26,9 +30,9 @@
 			<key>description</key>
 			<string>Mullvad is a VPN service that helps keep your online activity, identity, and location private.</string>
 			<key>developer</key>
-			<string>%NAME%</string>
+			<string>Mullvad</string>
 			<key>display_name</key>
-			<string>%NAME%</string>
+			<string>%APP_NAME%</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postuninstall_script</key>
