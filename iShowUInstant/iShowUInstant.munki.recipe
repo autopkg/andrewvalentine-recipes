@@ -67,11 +67,11 @@
 				<string>%ISHOWU_INSTANT_APPNAME%.app</string>
 				<key>additional_makepkginfo_options</key>
 				<array>
-					<key>--name</key>
+					<string>--name</string>
 					<string>%ISHOWU_INSTANT_MUNKI_NAME%</string>
-					<key>--description</key>
+					<string>--description</string>
 					<string>%ISHOWU_INSTANT_DESCRIPTION%</string>
-					<key>--displayname</key>
+					<string>--displayname</string>
 					<string>%ISHOWU_INSTANT_DISPLAY_NAME%</string>
 				</array>
 			</dict>
