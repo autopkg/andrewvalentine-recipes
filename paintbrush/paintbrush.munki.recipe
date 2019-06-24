@@ -52,7 +52,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/Paintbrush.app</string>
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
 			</dict>

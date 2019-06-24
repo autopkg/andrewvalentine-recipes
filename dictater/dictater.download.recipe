@@ -46,7 +46,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Dictater.app</string>
 				<key>requirements</key>
 				<string>cdhash H"4a6e2cbe27e093cc420291880380578949cd4fda"</string>
 			</dict>
