@@ -5,20 +5,43 @@
 	<key>Description</key>
 	<string>Downloads and imports the latest versions of the Native Instruments software suite into Munki</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.munki.NativeInstrumentsProduct</string>
+	<string>com.github.andrewvalentine.munki.native-instruments.product</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Native Instruments Product</string>
-		<!-- Only the latest version is currently supported. This does nothing. -->
-		<key>VERSION</key>
-		<string>LATEST</string>
-		<key>PRODUCT_UUID</key>
+		<key>CATEGORY</key>
+		<string></string>
+		<key>DESCRIPTION</key>
+		<string></string>
+		<key>DEVELOPER</key>
+		<string></string>
+		<key>DISPLAY_NAME</key>
 		<string></string>
 		<key>DOWNLOADS</key>
 		<string></string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string></string>
+		<key>NAME</key>
+		<string>Native Instruments Product</string>
+		<key>PRODUCT_UUID</key>
+		<string></string>
+		<!-- Only the latest version is currently supported. This does nothing. -->
+		<key>VERSION</key>
+		<string>LATEST</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>%CATEGORY%</string>
+			<key>description</key>
+			<string>%DESCRIPTION%</string>
+			<key>developer</key>
+			<string>%DEVELOPER%</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+		</dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
