@@ -16,7 +16,7 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>SourceForgeURLProvider</string>
+			<string>com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider</string>
 			<key>Arguments</key>
 			<dict>
 				<key>SOURCEFORGE_PROJECT_ID</key>
