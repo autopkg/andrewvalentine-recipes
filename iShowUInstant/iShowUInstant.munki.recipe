@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -67,11 +68,11 @@
 				<string>%ISHOWU_INSTANT_APPNAME%.app</string>
 				<key>additional_makepkginfo_options</key>
 				<array>
-					<key>--name</key>
+					<string>--name</string>
 					<string>%ISHOWU_INSTANT_MUNKI_NAME%</string>
-					<key>--description</key>
+					<string>--description</string>
 					<string>%ISHOWU_INSTANT_DESCRIPTION%</string>
-					<key>--displayname</key>
+					<string>--displayname</string>
 					<string>%ISHOWU_INSTANT_DISPLAY_NAME%</string>
 				</array>
 			</dict>
@@ -89,13 +90,13 @@
 				<string>%ISHOWU_AUDIO_CAPTURE_PKGNAME%.pkg</string>
 				<key>additional_makepkginfo_options</key>
 				<array>
-					<key>--description</key>
+					<string>--description</string>
 					<string>%ISHOWU_AUDIO_CAPTURE_DESCRIPTION%</string>
-					<key>--displayname</key>
+					<string>--displayname</string>
 					<string>%ISHOWU_AUDIO_CAPTURE_DISPLAY_NAME%</string>
-					<key>--name</key>
+					<string>--name</string>
 					<string>%ISHOWU_AUDIO_CAPTURE_MUNKI_NAME%</string>
-					<key>--update_for</key>
+					<string>--update_for</string>
 					<string>%ISHOWU_INSTANT_MUNKI_NAME%</string>
 				</array>
 			</dict>
