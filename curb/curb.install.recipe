@@ -23,9 +23,9 @@
             <key>Arguments</key>
             <dict>
                 <key>destination_path</key>
-                <string>/Applications/%NAME%.app</string>
+                <string>/Applications/Curb.app</string>
                 <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Curb.app</string>
             </dict>
         </dict>
         <dict>

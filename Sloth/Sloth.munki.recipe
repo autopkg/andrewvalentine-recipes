@@ -46,7 +46,7 @@
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Sloth.app</string>
 			</dict>
 		</dict>
 		<dict>

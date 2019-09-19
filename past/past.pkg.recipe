@@ -37,9 +37,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/Past3.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Past3.app</string>
 				<key>overwrite</key>
 				<true/>
 			</dict>
@@ -50,7 +50,7 @@
 		<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app/Contents/Info.plist</string>
+				<string>%pkgroot%/Applications/Past3.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleShortVersionString</key>
