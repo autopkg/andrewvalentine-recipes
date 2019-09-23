@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the current release version of Ghostlab3 into Munki. A license is required from Vanamco for continued use.</string> 
+	<string>Downloads and imports the current release version of Ghostlab3 into Munki. A license is required from Vanamco for continued use.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.munki.Ghostlab3</string>
 	<key>Input</key>

@@ -90,14 +90,14 @@ exit 0</string>
 					<string>#!/bin/bash
 
     echo "Checking for deprecated TurningPoint installation..."
-    
+
     if [ -d "/Applications/TurningPoint.app" ]; then
     echo "Deprecated TurningPoint.app found...removing..."
     /bin/rm -rf "/Applications/TurningPoint.app"
 else
     echo "No deprecated install found...proceeding with new install..."
 fi
-    
+
     exit 0</string>
 					<key>uninstall_method</key>
 					<string>uninstall_script</string>
