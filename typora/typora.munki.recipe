@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Typora</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/typora</string>
+		<string>apps/Typora</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,9 +21,9 @@
 			<key>category</key>
 			<string>Text Editors</string>
 			<key>description</key>
-			<string>A minimal Markdown editor.</string>
+			<string>A minimal Markdown editor and reader</string>
 			<key>developer</key>
-			<string>Abner Lee</string>
+			<string>Typora.io</string>
 			<key>display_name</key>
 			<string>%NAME%</string>
 			<key>name</key>
