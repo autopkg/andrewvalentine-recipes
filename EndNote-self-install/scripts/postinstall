@@ -1,0 +1,5 @@
+#!/bin/bash
+
+touch /Users/Shared/test.txt
+
+exit 0
