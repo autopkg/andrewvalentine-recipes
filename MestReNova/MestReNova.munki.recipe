@@ -30,6 +30,21 @@
 			<string>10.7.0</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+
+# MestReNova produces an error on launch if the following directory structure and permissions are not set
+# See https://raw.githubusercontent.com/autopkg/andrewvalentine-recipes/master/MestReNova/MestReNova_permissions_warning.png
+
+if [[ ! -d /Library/Application\ Support/Mestrelab\ Research\ S.L. ]]; then
+	    echo "Creating cache dir and setting permissions"
+	    /bin/mkdir -p /Library/Application\ Support/Mestrelab\ Research\ S.L./MestReNova/cache
+	    /usr/sbin/chown -R root:admin /Library/Application\ Support/Mestrelab\ Research\ S.L.
+	    /bin/chmod -R 755 /Library/Application\ Support/Mestrelab\ Research\ S.L.
+	    /bin/chmod -R 777 /Library/Application\ Support/Mestrelab\ Research\ S.L./MestReNova/cache
+	fi
+	
+	exit 0</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
