@@ -19,15 +19,20 @@
     <array>
 		<dict>
             <key>Processor</key>
-            <string>Copier</string>
+            <string>InstallFromDMG</string>
             <key>Arguments</key>
             <dict>
-				<key>destination_path</key>
-				<string>/Applications/Hyper.app</string>
-                <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Hyper.app</string>
-				<key>overwrite</key>
-				<string>true</string>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+                <key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>Hyper.app</string>
+					</dict>
+				</array>
 			</dict>
         </dict>
         <dict>
