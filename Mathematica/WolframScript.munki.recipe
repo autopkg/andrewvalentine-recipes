@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Imports WolframScript into Munki.
+
+This is designed to be run against a local .dmg. To run this recipe successfully, you must:
+
+- Register for a Wolfram ID.
+- Download the latest version of Mathematica using the Wolfram Research Mathematica Download Manager (WRMDM). The WRMDM downloads the Mathematica dmg to your Downloads folder.
+- Mount the dmg.
+- Run the following command:
+
+autopkg run -vvv -p /Volumes/Mathematica/WolframScript.pkg Mathematica.munki
+
+WolframScript is typically an add on for Mathematica. If you wish to bundle this with your organisational install of Mathematica, add the WolframScript item as an update_for your Mathematica item in your recipe override.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.WolframScript</string>
+	<key>Input</key>
+	<dict>
+		<key>DISPLAY_NAME</key>
+		<string>Wolfram Script</string>
+		<key>NAME</key>
+		<string>WolframScript</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Mathematics</string>
+			<key>description</key>
+			<string>WolframScript tools for use with Mathematica</string>
+			<key>developer</key>
+			<string>Wolfram Research</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%PKG%</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Wolfram Research, Inc (D2Y8ST33G6)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded_pkg</string>
+				<key>flat_pkg_path</key>
+				<string>%PKG%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded_pkg/WolframScript.pkg/Payload</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded_pkg_payload</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%/expanded_pkg_payload</string>
+				<key>installs_item_paths</key>
+				<array>
+					<string>/Applications/WolframScript.app</string>
+					<string>/usr/share/man/man1/wolframscript.1</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>munkiimport_pkgname</key>
+				<string>WolframScript.pkg</string>
+				<key>pkg_path</key>
+				<string>%PKG%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

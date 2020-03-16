@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Imports Mathematica into Munki.
+
+This is designed to be run against a local .dmg. To run this recipe successfully, you must:
+
+- Register for a Wolfram ID.
+- Download the latest version of Mathematica using the Wolfram Research Mathematica Download Manager (WRMDM). The WRMDM downloads the Mathematica dmg to your Downloads folder.
+- Run the following command:
+
+autopkg run -vvv -p /path/to/downloaded_mathematica_dmg Mathematica.munki
+
+A postinstall_script that adds Mathematica to the client application firewall is included in this repo. If you wish to use this, add it to your recipe override.</string>
+	<key>Identifier</key>
+	<string>com.github.andrewvalentine.munki.Mathematica</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Mathematica</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Mathematics</string>
+			<key>description</key>
+			<string>A symbolic mathematical computation program, used in many scientific, engineering, mathematical and computing fields. Includes support for Elementary and Special mathematical function libraries, complex number, arbitrary precision, interval arithmetic and symbolic computation, as well as full integration of the Wolfram Language.</string>
+			<key>developer</key>
+			<string>Wolfram Research</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%PKG%/Mathematica.app</string>
+				<key>requirement</key>
+				<string>identifier "com.wolfram.Mathematica" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = D2Y8ST33G6</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>munkiimport_appname</key>
+				<string>Mathematica.app</string>
+				<key>pkg_path</key>
+				<string>%PKG%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
