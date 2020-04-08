@@ -28,7 +28,7 @@
 			<string>Audio-Visual</string>
 			<key>description</key>
 			<string>%DESCRIPTION%</string>
-			<key>DISPLAY_NAME</key>
+			<key>display_name</key>
 			<string>%DISPLAY_NAME%</string>
 			<key>developer</key>
 			<string>shinywhitebox</string>
