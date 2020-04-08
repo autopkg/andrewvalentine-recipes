@@ -8,22 +8,14 @@
 	<string>com.github.andrewvalentine.munki.ishowuinstant</string>
 	<key>Input</key>
 	<dict>
-		<key>ISHOWU_INSTANT_MUNKI_NAME</key>
+		<key>NAME</key>
 		<string>iShowUInstant</string>
-		<key>ISHOWU_AUDIO_CAPTURE_MUNKI_NAME</key>
-		<string>iShowUAudioCapture</string>
-		<key>ISHOWU_INSTANT_APPNAME</key>
+		<key>APP_NAME</key>
 		<string>iShowU Instant</string>
-		<key>ISHOWU_AUDIO_CAPTURE_PKGNAME</key>
-		<string>iShowU Audio Capture</string>
-		<key>ISHOWU_INSTANT_DESCRIPTION</key>
+		<key>DESCRIPTION</key>
 		<string>Realtime screen recording. Features include live preview, customizable presets and scheduled recordings.</string>
-		<key>ISHOWU_AUDIO_CAPTURE_DESCRIPTION</key>
-		<string>iShowU Audio Capture is an extension for macOS used by iShowU Studio and iShowU Instant to record audio from your computer. This is a replacement for Soundflower.</string>
-		<key>ISHOWU_INSTANT_DISPLAY_NAME</key>
-		<string>%ISHOWU_INSTANT_APPNAME%</string>
-		<key>ISHOWU_AUDIO_CAPTURE_DISPLAY_NAME</key>
-		<string>%ISHOWU_AUDIO_CAPTURE_PKGNAME%</string>
+		<key>DISPLAY_NAME</key>
+		<string>%APP_NAME%</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/iShowUInstant</string>
 		<key>pkginfo</key>
@@ -34,8 +26,14 @@
 			</array>
 			<key>category</key>
 			<string>Audio-Visual</string>
+			<key>description</key>
+			<string>%DESCRIPTION%</string>
+			<key>DISPLAY_NAME</key>
+			<string>%DISPLAY_NAME%</string>
 			<key>developer</key>
 			<string>shinywhitebox</string>
+			<key>name</key>
+			<string>%NAME%</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -46,17 +44,6 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>Copier</string>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads</string>
-				<key>source_path</key>
-				<string>%pathname%/%ISHOWU_AUDIO_CAPTURE_PKGNAME%.pkg</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
 			<string>MunkiImporter</string>
 			<key>Arguments</key>
 			<dict>
@@ -64,41 +51,6 @@
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>munkiimport_appname</key>
-				<string>%ISHOWU_INSTANT_APPNAME%.app</string>
-				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--name</string>
-					<string>%ISHOWU_INSTANT_MUNKI_NAME%</string>
-					<string>--description</string>
-					<string>%ISHOWU_INSTANT_DESCRIPTION%</string>
-					<string>--displayname</string>
-					<string>%ISHOWU_INSTANT_DISPLAY_NAME%</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>MunkiImporter</string>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%ISHOWU_AUDIO_CAPTURE_PKGNAME%.pkg</string>
-				<key>repo_subdirectory</key>
-				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>munkiimport_pkgname</key>
-				<string>%ISHOWU_AUDIO_CAPTURE_PKGNAME%.pkg</string>
-				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--description</string>
-					<string>%ISHOWU_AUDIO_CAPTURE_DESCRIPTION%</string>
-					<string>--displayname</string>
-					<string>%ISHOWU_AUDIO_CAPTURE_DISPLAY_NAME%</string>
-					<string>--name</string>
-					<string>%ISHOWU_AUDIO_CAPTURE_MUNKI_NAME%</string>
-					<string>--update_for</string>
-					<string>%ISHOWU_INSTANT_MUNKI_NAME%</string>
-				</array>
 			</dict>
 		</dict>
 	</array>

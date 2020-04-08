@@ -12,8 +12,6 @@
 		<string>iShowUInstant</string>
 		<key>APPNAME</key>
 		<string>iShowU Instant</string>
-		<key>PKGNAME</key>
-		<string>iShowU Audio Capture</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -46,21 +44,6 @@
 				<string>%pathname%/%APPNAME%.app</string>
 				<key>requirements</key>
 				<string>identifier "com.shinywhitebox.iShowU-Instant" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PMJ275ZTUX</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%pathname%/%PKGNAME%.pkg</string>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Installer: Shiny White Box Limited (PMJ275ZTUX)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
 			</dict>
 		</dict>
 		<dict>
