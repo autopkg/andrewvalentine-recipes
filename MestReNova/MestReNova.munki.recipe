@@ -30,6 +30,12 @@
 			<string>10.7.0</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>notes</key>
+			<string>The following may be added to your postinstall_script in order to disable update checks. For whatever reason, MestReNova does not respect these preferences if set in a Configuration Profile:
+
+/usr/bin/defaults write com.mestrelab.MestReNova General.SoftwareUpdateCheck.Days 0
+/usr/bin/defaults write com.mestrelab.MestReNova General.SoftwareUpdateCheck.Enabled 0
+</string>
 			<key>postinstall_script</key>
 			<string>#!/bin/bash
 
