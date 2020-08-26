@@ -23,7 +23,7 @@
 				<key>github_repo</key>
 				<string>JabRef/jabref</string>
 				<key>asset_regex</key>
-				<string>JabRef_mac[\S]+\.dmg</string>
+				<string>JabRef-[\S]+\.dmg</string>
 			</dict>
 		</dict>
 		<dict>
