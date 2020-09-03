@@ -39,7 +39,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-	<string>com.github.joshua-d-miller.download.nvivo</string>
+	<string>com.github.dataJAR-recipes.download.NVivo 12</string>
     <key>Process</key>
     <array>
         <dict>
