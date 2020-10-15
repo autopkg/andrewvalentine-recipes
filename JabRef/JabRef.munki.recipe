@@ -44,69 +44,12 @@
 					<string>%DEVELOPER%</string>
 					<key>display_name</key>
 					<string>%DISPLAY_NAME%</string>
-					<key>items_to_copy</key>
-					<array>
-						<dict>
-							<key>source_item</key>
-							<string>JabRef Installer.app</string>
-							<key>destination_path</key>
-							<string>/tmp/</string>
-						</dict>
-					</array>
-					<key>installs</key>
-					<array>
-						<dict>
-							<key>CFBundleIdentifier</key>
-							<string>com.install4j.0034-7691-1464-4754.23</string>
-							<key>CFBundleName</key>
-							<string>JabRef</string>
-							<key>CFBundleShortVersionString</key>
-							<string>%version%</string>
-							<key>CFBundleVersion</key>
-							<string>%version%</string>
-							<key>minosversion</key>
-							<string>10.7.3</string>
-							<key>path</key>
-							<string>/Applications/JabRef.app</string>
-							<key>type</key>
-							<string>application</string>
-							<key>version_comparison_key</key>
-							<string>CFBundleShortVersionString</string>
-						</dict>
-					</array>
 					<key>name</key>
 					<string>%NAME%</string>
-					<key>postinstall_script</key>
-					<string>#!/bin/bash
-
-# Run the installer.
-
-# This replicates the activity of the JabRef Installer.app when run interactively.
-# Options determined from the brew cask recipe (https://github.com/caskroom/homebrew-cask/blob/master/Casks/jabref.rb)
-
-/tmp/JabRef\ Installer.app/Contents/MacOS/JavaApplicationStub -q -V \
-createDesktopLinkAction$Boolean=false -V \
-addToDockAction$Boolean=false -V \
-showFileAction$Boolean=false -V \
-sys.installationDir=/Applications -V \
-executionLauncherAction$Boolean=false
-
-# Cleanup the installer files
-/bin/rm -rf /tmp/JabRef\ Installer.app
-
-exit 0</string>
 					<key>requires</key>
 					<array>
 						<string>%REQUIRES%</string>
 					</array>
-					<key>uninstall_method</key>
-					<string>uninstall_script</string>
-					<key>uninstall_script</key>
-					<string>#!/bin/bash
-
-/bin/rm -rf /Applications/JabRef.app
-
-exit 0</string>
 			</dict>
 				<key>pkg_path</key>
 					<string>%pathname%</string>
