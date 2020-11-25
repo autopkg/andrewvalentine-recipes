@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>http://paintbrush.sourceforge.net/updates2x.xml</string>
+				<string>http://paintbrush.sourceforge.io/updates2x.xml</string>
 			</dict>
 		</dict>
 		<dict>
@@ -33,7 +33,21 @@
 				<string>%url%</string>
 			</dict>
 		</dict>
-		<!-- Code signature verification not possible -->
+		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.soggywaffles.paintbrush" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = G966ML7VBG)</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
