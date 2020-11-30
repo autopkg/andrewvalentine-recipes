@@ -13,7 +13,7 @@
 		<key>DOWNLOAD_URL</key>
 		<string>https://kodi.tv/download/851/</string>
 		<key>SEARCH_PATTERN</key>
-		<string>[^"]+\.dmg[^"]*</string>
+		<string>[^"]+\.dmg[^"?]*</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
