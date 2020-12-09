@@ -1,14 +1,14 @@
 repos:
 - repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: v1.5.1
+  rev: v1.8.1
   hooks:
   - id: check-autopkg-recipes
-    args: ['--recipe-prefix', 'com.github.andrewvalentine.']
+    args: ['--recipe-prefix', 'com.github.andrewvalentine.', '--']
   - id: forbid-autopkg-overrides
   - id: forbid-autopkg-trust-info
   - id: check-plists
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
+  rev: v3.3.0
   hooks:
   - id: check-added-large-files
     args: ['--maxkb=100']
