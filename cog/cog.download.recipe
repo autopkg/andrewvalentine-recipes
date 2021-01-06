@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>http://cogx.org/appcast/stable.xml</string>
+				<string>https://cogx.org/appcast/stable.xml</string>
 			</dict>
 		</dict>
 		<dict>
