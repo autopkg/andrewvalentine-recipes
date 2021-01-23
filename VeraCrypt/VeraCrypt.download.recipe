@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https:\/\/launchpad\.net\/veracrypt\/trunk\/.*\..*\/\+download\/VeraCrypt_(?P&lt;downloadversion&gt;\d*\.\d*)\.dmg</string>
+				<string>(?P&lt;DownloadURL&gt;https:\/\/launchpad\.net\/veracrypt\/trunk\/.*\..*\/\+download\/VeraCrypt_\d*\.\d*-?\w*\.dmg)</string>
 				<key>url</key>
 				<string>https://launchpad.net/veracrypt</string>
 			</dict>
@@ -32,7 +32,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://launchpad.net/veracrypt/trunk/%downloadversion%/+download/VeraCrypt_%downloadversion%.dmg</string>
+				<string>%DownloadURL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
