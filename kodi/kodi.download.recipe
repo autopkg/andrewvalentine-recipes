@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Kodi</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://kodi.tv/download/851/</string>
+		<string>https://kodi.tv/download/macos/</string>
 		<key>SEARCH_PATTERN</key>
 		<string>[^"]+\.dmg[^"?]*</string>
 	</dict>
