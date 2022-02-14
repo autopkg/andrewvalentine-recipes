@@ -1,7 +1,7 @@
 Description: Downloads the latest version, uploads to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
 Identifier: com.github.andrewvalentine.recipes.jamf.iShowUInstant
 MinimumVersion: "2.3"
-ParentRecipe: com.github.andrewvalentine.download.iShowUInstant
+ParentRecipe: com.github.andrewvalentine.download.ishowuinstant
 
 Input:
   NAME: Panoply
