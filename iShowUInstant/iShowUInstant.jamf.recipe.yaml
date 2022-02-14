@@ -1,0 +1,45 @@
+Description: Downloads the latest version, uploads to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
+Identifier: com.github.andrewvalentine.recipes.jamf.iShowUInstant
+MinimumVersion: "2.3"
+ParentRecipe: com.github.andrewvalentine.download.iShowUInstant
+
+Input:
+  NAME: Panoply
+  CATEGORY: Science
+  GROUP_NAME: "%NAME%-update-smart"
+  GROUP_TEMPLATE: SmartGroup-update-smart-regex.xml
+  TESTING_GROUP_NAME: Testing
+  POLICY_CATEGORY: Testing
+  POLICY_TEMPLATE: Policy-install-latest.xml
+  POLICY_NAME: "Install Latest %NAME%"
+  POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
+  SELF_SERVICE_DISPLAY_NAME: "Install Latest %NAME%"
+  SELF_SERVICE_DESCRIPTION: Realtime screen recording for macOS. Record from any screen, enhance your microphone audio through the use of a dynamics processor, compressor and/or equaliser, add text and/or an overlay, enhance your recording with mouse and click visualization, trim front/back after recording, create time-lapse recordings, share to a wide range of online services, and more.
+  SELF_SERVICE_ICON: "%NAME%.png"
+  INSTALL_BUTTON_TEXT: "Install %version%"
+  REINSTALL_BUTTON_TEXT: "Install %version%"
+  UPDATE_PREDICATE: "pkg_uploaded == False"
+
+Process:
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+    Arguments:
+      category_name: "%CATEGORY%"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+
+  - Processor: StopProcessingIf
+    Arguments:
+      predicate: "%UPDATE_PREDICATE%"
+
+  - Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+    Arguments:
+      computergroup_template: "%GROUP_TEMPLATE%"
+      computergroup_name: "%GROUP_NAME%"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+    Arguments:
+      policy_template: "%POLICY_TEMPLATE%"
+      policy_name: "%POLICY_NAME%"
+      icon: "%SELF_SERVICE_ICON%"
