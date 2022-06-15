@@ -1,5 +1,5 @@
 Description: Downloads the latest version of Max 8 and makes a pkg. Then, uploads the package to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
-Identifier: com.github.andrewvalentine..jamf.Max 8
+Identifier: com.github.andrewvalentine.jamf.Max 8
 MinimumVersion: "2.3"
 ParentRecipe: com.github.andrewvalentine.pkg.Max 8
 
