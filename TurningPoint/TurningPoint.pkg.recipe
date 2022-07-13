@@ -73,8 +73,6 @@
 					<string>%identifier%</string>
 					<key>version</key>
 					<string>%version%</string>
-					<key>scripts</key>
-					<string>TurningPoint_scripts</string>
 					<key>chown</key>
 					<array>
 						<dict>
