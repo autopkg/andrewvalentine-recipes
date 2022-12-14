@@ -68,7 +68,7 @@
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>pkgname</key>
-					<string>%NAME%</string>
+					<string>%NAME%-%version%</string>
 					<key>id</key>
 					<string>%identifier%</string>
 					<key>version</key>
