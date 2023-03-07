@@ -3,13 +3,13 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Downloads the latest version of TurningPoint. If you work in a business or educational environment, you should be aware of what version of the software your organization currently supports and is licensed for before using this recipe.</string>
+        <string>TurningPoint is now PointSolutions.
+
+Downloads the latest version of PointSolutions. If you work in a business or educational environment, you should be aware of what version of the software your organization currently supports and is licensed for before using this recipe.</string>
         <key>Identifier</key>
         <string>com.github.andrewvalentine.download.TurningPoint</string>
         <key>Input</key>
         <dict>
-            <key>APPNAME</key>
-            <string>%NAME% App</string>
             <key>NAME</key>
             <string>TurningPoint</string>
         </dict>
@@ -47,7 +47,7 @@
                 <key>Arguments</key>
                 <dict>
                     <key>input_path</key>
-                    <string>%pathname%/%APPNAME%.app</string>
+                    <string>%pathname%/*.app</string>
                     <key>requirement</key>
                     <string>identifier "com.turningtechnologies.TurningPoint.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "3YF49VXVT5"</string>
                 </dict>
