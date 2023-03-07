@@ -4,7 +4,7 @@ MinimumVersion: "2.3"
 ParentRecipe: com.github.andrewvalentine.pkg.TurningPoint
 
 Input:
-  NAME: TurningPoint
+  NAME: PointSolutions
   CATEGORY: Productivity
   GROUP_NAME: "%NAME%-update-smart"
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
@@ -14,7 +14,7 @@ Input:
   SELF_SERVICE_DISPLAY_NAME: "Install Latest %NAME%"
   SELF_SERVICE_DESCRIPTION: A cross platform polling and data collection solution. Incorporates management of polling, content, participants, sessions and reports.
   SELF_SERVICE_ICON: "%NAME%.png"
-  SCRIPT_NAME: "TurningPoint_postinstall.sh"
+  SCRIPT_NAME: "PointSolutions_postinstall.sh"
   SCRIPT_PRIORITY: After
   TESTING_GROUP_NAME: Testing
   UPDATE_PREDICATE: "pkg_uploaded == False"
