@@ -17,23 +17,16 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>GitHubReleasesInfoProvider</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://bitbucket.org/objective-see/deploy/downloads</string>
-				<key>re_pattern</key>
-				<string>%NAME%_[0-9\.]*.zip</string>
+				<key>github_repo</key>
+				<string>objective-see/KnockKnock</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>%url%/%match%</string>
-			</dict>
 		</dict>
 		<dict>
 			<key>Processor</key>
