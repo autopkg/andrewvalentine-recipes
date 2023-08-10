@@ -8,8 +8,10 @@
 	Use the DOWNLOAD_ARCH Input Variable to specify your required architecture. 
 	Values at the time of writing are:
 
-	bigsur_arm64
-	bigsur
+	universal
+	mojave
+	sierra
+	mountainlion
 	</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.ocenaudio</string>
@@ -18,7 +20,7 @@
 		<key>NAME</key>
 		<string>ocenaudio</string>
 		<key>DOWNLOAD_ARCH</key>
-		<string>bigsur</string>
+		<string>universal</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
