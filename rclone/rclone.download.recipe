@@ -6,11 +6,13 @@
 	<string>Downloads the latest version of rclone</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.rclone</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>rclone</string>
-	</dict>
+        <key>Input</key>
+        <dict>
+                <key>NAME</key>
+                <string>rclone_arm</string>
+                <key>ARCH</key>
+                <string>arm64</string>
+        </dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>Process</key>
