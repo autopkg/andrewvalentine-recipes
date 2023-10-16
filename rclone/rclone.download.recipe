@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of rclone. Input variable for architecture added - "arm64" or "amd64"</string>
+	<string>Downloads the latest version of rclone. Input variable for architecture added - "arm64" or "amd64"
+		to match releases on https://github.com/rclone/rclone/releases </string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.rclone</string>
         <key>Input</key>
