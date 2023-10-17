@@ -42,9 +42,9 @@
 				<key>pkginfo</key>
 				<dict>
 					<key>display_name</key>
-					<string>%NAME% %ARCH%</string>
-					<key>name</key>
 					<string>%NAME%</string>
+					<key>name</key>
+					<string>%NAME%_%ARCH%</string>
 					<key>category</key>
 					<string>Cloud</string>
 					<key>description</key>
