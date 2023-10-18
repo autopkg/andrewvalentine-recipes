@@ -43,7 +43,7 @@
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%/rclone-*.*/rclone</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/usr/local/bin/%NAME%</string>
+				<string>%pkgroot%/usr/local/bin/rclone</string>
 			</dict>
 		</dict>
 		<dict>
