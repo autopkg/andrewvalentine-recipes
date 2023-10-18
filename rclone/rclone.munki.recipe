@@ -44,7 +44,7 @@
 					<key>display_name</key>
 					<string>%NAME%</string>
 					<key>name</key>
-					<string>%NAME%_%ARCH%</string>
+					<string>%NAME%</string>
 					<key>category</key>
 					<string>Cloud</string>
 					<key>description</key>
