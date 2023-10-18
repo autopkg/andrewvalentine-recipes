@@ -56,7 +56,7 @@
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>pkgname</key>
-					<string>%NAME%-%ARCH%-%version%</string>
+					<string>%NAME%-%version%</string>
 					<key>id</key>
 					<string>github.ncw.rclone</string>
 					<key>version</key>
