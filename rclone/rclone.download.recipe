@@ -48,7 +48,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%_%ARCH%/</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%/</string>
 			</dict>
 		</dict>
 	</array>
