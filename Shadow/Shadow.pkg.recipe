@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest RStudio .dmg and creates a pkg. Version is retrieved from the parent download recipe.</string>
+	<string>Downloads the latest version of Shadow Motion Capture and creates a version numbered .pkg file</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.pkg.Shadow</string>
 	<key>Input</key>
