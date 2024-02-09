@@ -3,14 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of rclone</string>
+	<string>Downloads the latest version of rclone. Input variable for architecture added - "arm64" or "amd64"
+		to match releases on https://github.com/rclone/rclone/releases </string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.rclone</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>rclone</string>
-	</dict>
+        <key>Input</key>
+        <dict>
+                <key>NAME</key>
+                <string>rclone_arm</string>
+                <key>ARCH</key>
+                <string>arm64</string>
+        </dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>Process</key>
@@ -23,7 +26,7 @@
 				<key>github_repo</key>
 				<string>ncw/rclone</string>
 				<key>asset_regex</key>
-				<string>rclone-v[0-9\.]*-osx-amd64.zip</string>
+				<string>rclone-v[0-9\.]*-osx-%ARCH%.zip</string>
 			</dict>
 		</dict>
 		<dict>
@@ -45,9 +48,10 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%/</string>
 			</dict>
 		</dict>
 	</array>
 </dict>
 </plist>
+
