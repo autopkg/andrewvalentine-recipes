@@ -1,0 +1,42 @@
+Description: |
+  Downloads the loopdown zip archive and creates a .pkg.
+Identifier: com.github.andrewvalentine.pkg.loopdown
+ParentRecipe: com.github.andrewvalentine.download.loopdown
+MinimumVersion: "2.3"
+
+Input:
+  NAME: loopdown
+  PKG_ID: com.github.carlashley.loopdown
+
+Process:
+  - Processor: Unarchiver
+    Arguments:
+       destination_path: "%RECIPE_CACHE_DIR%/unarchive"
+
+  - Processor: PkgRootCreator
+    Arguments:
+      pkgroot: "%RECIPE_CACHE_DIR%/pkgroot"
+      pkgdirs:
+        usr/local/bin: "744"
+
+  - Processor: Copier
+    Arguments:
+      destination_path: "%pkgroot%/usr/local/bin/%NAME%"
+      source_path: "%RECIPE_CACHE_DIR%/unarchive/carlashley*/%NAME%"
+
+  - Processor: PkgCreator
+    Arguments:
+      pkg_request:
+        chown:
+          - group: wheel
+            path: /usr/local/bin/loopdown
+            user: root
+            mode: "755"
+        id: "%PKG_ID%"
+        options: purge_ds_store
+        pkgdir: "%RECIPE_CACHE_DIR%/pkgroot"
+        pkgname: "%NAME%-%version%"
+        version: "%version%"
+
+
+  - Processor: EndOfCheckPhase
