@@ -46,7 +46,7 @@
 			<dict>
 				<key>input_path</key>
 				<string>%pathname%</string>
-				<key>requirements</key>
+				<key>requirement</key>
 				<string>identifier "pdfsam-4" and certificate leaf = H"6736a6beac8ac9daef8873701959009b4a70c251"</string>
 			</dict>
 		</dict>
