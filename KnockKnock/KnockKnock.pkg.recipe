@@ -55,6 +55,8 @@
 					<string>version</string>
 					<key>CFBundleIdentifier</key>
 					<string>identifier</string>
+					<key>LSMinimumSystemVersion</key>
+					<string>minimum_os_version</string>
 				</dict>
 			</dict>
 		</dict>
