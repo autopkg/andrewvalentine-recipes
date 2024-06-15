@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>BasicTeX</string>
 		<key>DOWNLOAD_URL</key>
-		<string>http://tug.org/cgi-bin/mactex-download/%NAME%.pkg</string>
+		<string>https://tug.org/cgi-bin/mactex-download/%NAME%.pkg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

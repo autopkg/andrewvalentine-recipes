@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://www.giss.nasa.gov/tools/panoply/download/</string>
+				<string>https://www.giss.nasa.gov/tools/panoply/download/</string>
 				<key>request_headers</key>
                 <dict>
                     <key>User-Agent</key>
@@ -37,7 +37,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://www.giss.nasa.gov/tools/panoply/download/%match%</string>
+				<string>https://www.giss.nasa.gov/tools/panoply/download/%match%</string>
 			</dict>
 		</dict>
 		<dict>
