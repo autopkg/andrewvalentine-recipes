@@ -14,7 +14,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.final-cut-library-manager</string>
+	<string>com.github.autopkg.macvfx.download.FinalCutLibraryManager</string>
 	<key>Process</key>
 	<array>
 		<dict>
