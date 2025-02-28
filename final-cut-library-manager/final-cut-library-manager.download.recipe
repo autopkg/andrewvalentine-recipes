@@ -12,9 +12,18 @@
 		<string>Final Cut Library Manager</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>Final Cut Library Manager is now called Arctic. Consider switching to the Arctic recipes in the dataJAR-recipes repo. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -53,7 +62,7 @@
 			<dict>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/Final Cut Library Manager.app</string>
-				<key>requirements</key>
+				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.arcticwhiteness.finalcutlibrarymanager" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = MXZ782EHFK)</string>
 			</dict>
 		</dict>

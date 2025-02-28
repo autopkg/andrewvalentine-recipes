@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates a package from the TurningPoint download. A postinstall script is included in the TurningPoint_scripts directory that sets up Microsoft PowerPoint integration at install time. If you work in a business or educational environment, you should be aware of what version of the software your organization currently supports and is licensed for before using this recipe.</string>
+	<string>Create a package from the Rider download. See the parent recipe (https://github.com/autopkg/bnpl-recipes/blob/master/JetBrains/Rider.download.recipe) for the full range of Input Variables.</string>
 	<key>Identifier</key>
-	<string>com.github.andrewvalentine.pkg.TurningPoint</string>
+	<string>com.github.andrewvalentine.pkg.Rider</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>TurningPoint</string>
+		<string>Rider</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.andrewvalentine.download.TurningPoint</string>
+	<string>com.github.bnpl.autopkg.download.rider</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -36,10 +36,10 @@
 			<string>Copier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%pathname%/%APPNAME%.app</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%APPNAME%.app</string>
+				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<key>source_path</key>
+				<string>%pathname%/%NAME%.app</string>
 			</dict>
 		</dict>
 		<dict>
@@ -48,11 +48,9 @@
 		<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pkgroot%/Applications/%APPNAME%.app/Contents/Info.plist</string>
+				<string>%pkgroot%/Applications/%NAME%.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
-					<key>CFBundleVersion</key>
-					<string>version</string>
 					<key>CFBundleIdentifier</key>
 					<string>identifier</string>
 				</dict>
@@ -68,13 +66,11 @@
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>pkgname</key>
-					<string>%NAME%</string>
+					<string>%NAME%-arm64-%version%</string>
 					<key>id</key>
 					<string>%identifier%</string>
 					<key>version</key>
 					<string>%version%</string>
-					<key>scripts</key>
-					<string>TurningPoint_scripts</string>
 					<key>chown</key>
 					<array>
 						<dict>
