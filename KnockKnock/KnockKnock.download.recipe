@@ -12,23 +12,23 @@
 		<string>KnockKnock</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
 				<string>objective-see/KnockKnock</string>
 			</dict>
-			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<key>github_repo</key>
+				<string>objective-see/KnockKnock</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
