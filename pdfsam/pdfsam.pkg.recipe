@@ -19,14 +19,7 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>PkgCopier</string>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				<key>source_pkg</key>
-				<string>%pathname%/*.pkg</string>
-			</dict>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
