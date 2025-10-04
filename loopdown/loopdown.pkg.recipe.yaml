@@ -33,7 +33,6 @@ Process:
             user: root
             mode: "755"
         id: "%PKG_ID%"
-        options: purge_ds_store
         pkgdir: "%RECIPE_CACHE_DIR%/pkgroot"
         pkgname: "%NAME%-%version%"
         version: "%version%"
