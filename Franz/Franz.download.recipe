@@ -18,7 +18,7 @@ Set ARCH to blank for Intel, or -arm64 for Apple Silicon.
 		<key>INCLUDE_PRERELEASES</key>
 		<string></string>
 		<key>ARCH</key>
-		<string></string>
+		<string>-arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -30,7 +30,7 @@ Set ARCH to blank for Intel, or -arm64 for Apple Silicon.
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>%NAME%-[\S]+\.dmg</string>
+				<string>Franz-[\d\.]+%ARCH%\.dmg</string>
 				<key>github_repo</key>
 				<string>meetfranz/franz</string>
 				<key>include_prereleases</key>
