@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Franz from Github. Set INCLUDE_PRERELEASES to a non-empty value to download pre-release software.</string>
+	<string>Downloads Franz from Github.
+	
+Set INCLUDE_PRERELEASES to a non-empty value to download pre-release software.
+
+Set ARCH to blank for Intel, or -arm64 for Apple Silicon.
+</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.franz</string>
 	<key>Input</key>
@@ -11,6 +16,8 @@
 		<key>NAME</key>
 		<string>Franz</string>
 		<key>INCLUDE_PRERELEASES</key>
+		<string></string>
+		<key>ARCH</key>
 		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
