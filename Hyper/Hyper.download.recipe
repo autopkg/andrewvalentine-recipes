@@ -3,11 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Hyper</string>
+	<string>Downloads the latest version of Hyper.
+
+Use the ARCH input variable to specify the architecture to download.
+Values at the time of writing are:
+
+- dmg (Intel, default)
+- dmg_arm64 (Apple Silicon)
+	</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.hyper</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>dmg</string>
 		<key>NAME</key>
 		<string>Hyper</string>
 	</dict>
@@ -21,7 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://releases.hyper.is/download/mac</string>
+				<string>https://releases.hyper.is/download/%ARCH%</string>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 			</dict>
