@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest release version of BitBar from Github</string>
+	<string>Downloads the latest release version of xbar (formerly BitBar) from Github.</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.bitbar</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>BitBar</string>
+		<string>xbar</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>matryer/bitbar</string>
+				<string>matryer/xbar</string>
 				<key>include_prereleases</key>
 				<false/>
 			</dict>
@@ -35,10 +35,20 @@
 				<string>%url%</string>
 			</dict>
 		</dict>
-		<!-- Code signature verification not possible -->
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/xbar.app</string>
+				<key>requirement</key>
+				<string>identifier "com.xbarapp.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "N3H5B92L5N"</string>
+			</dict>
 		</dict>
 	</array>
 </dict>
