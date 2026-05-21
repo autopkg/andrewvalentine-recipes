@@ -3,44 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the latest release version of BitBar</string>
+	<string>Downloads and installs the latest release version of xbar (formerly BitBar).</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.install.bitbar</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>BitBar</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.9</string>
-    <key>ParentRecipe</key>
-    <string>com.github.andrewvalentine.download.bitbar</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Copier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>destination_path</key>
-                <string>/Applications/BitBar.app</string>
-                <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/BitBar.app</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+		<string>xbar</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.andrewvalentine.download.bitbar</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>InstallFromDMG</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>source_item</key>
+						<string>xbar.app</string>
+						<key>destination_path</key>
+						<string>/Applications</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>
