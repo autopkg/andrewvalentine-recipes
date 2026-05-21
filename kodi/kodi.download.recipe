@@ -3,17 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest release version of Kodi. The .app bundle is not code-signed.</string>
+	<string>Downloads the latest release version of Kodi. The .app bundle is not code-signed.
+
+Use the ARCH input variable to specify the architecture to download.
+Values at the time of writing are:
+
+- arm64 (Apple Silicon, default)
+- x86_64 (Intel)</string>
 	<key>Identifier</key>
 	<string>com.github.andrewvalentine.download.kodi</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
 		<key>NAME</key>
 		<string>Kodi</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://kodi.tv/download/851/</string>
+		<string>https://mirrors.kodi.tv/releases/osx/%ARCH%/</string>
 		<key>SEARCH_PATTERN</key>
-		<string>[^"]+\.dmg[^"?]*</string>
+		<string>kodi-[\d.]+-[A-Za-z]+-%ARCH%\.dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
