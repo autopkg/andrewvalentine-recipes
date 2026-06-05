@@ -23,7 +23,7 @@ Downloads the latest version of PointSolutions. If you work in a business or edu
                 <key>Arguments</key>
                 <dict>
                     <key>url</key>
-                    <string>https://downloads.turning.com/downloads/turningclassic</string>
+		    <string>https://echo360.com/downloads/ps-classic-desktop/</string>
                     <key>re_pattern</key>
                     <string>https://d2p83s3q5aa83e\.cloudfront\.net/wp-content/software/TurningPoint/.*?\.dmg</string>
                 </dict>
