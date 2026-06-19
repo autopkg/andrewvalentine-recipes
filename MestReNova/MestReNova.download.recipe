@@ -9,9 +9,9 @@
 	<key>Input</key>
 	<dict>
 		<key>SEARCH_URL</key>
-		<string>https://mestrelab.com/download/mnova/</string>
+		<string>https://mestrelab.com/download</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://mestrelab.com/downloads/mnova/mac</string>
+		<string>https://mestrelab.com/downloads/mnova/mac/</string>
 		<key>NAME</key>
 		<string>MestReNova</string>
 	</dict>
@@ -24,10 +24,10 @@
 			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>%NAME%-.*-.*.dmg</string>
 				<key>url</key>
 				<string>%SEARCH_URL%</string>
+				<key>re_pattern</key>
+				<string>%NAME%-[\d.-]+.dmg</string>
 			</dict>
 		</dict>
 		<dict>
